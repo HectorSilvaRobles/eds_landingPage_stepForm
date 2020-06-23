@@ -11,8 +11,8 @@ export class StepForm extends Component {
 
         this.state = {
             step: 1,
-            res_or_com: '',
-            intr_extr_both: '',
+            res_or_com: null,
+            intr_extr_both: null,
             fullname: '',
         }
     }
@@ -35,14 +35,12 @@ export class StepForm extends Component {
 
 
     // Handle Fields Change
-    handleChange = (input) => e => {
-        console.log(input)
-        this.setState({
-            [input.type] : input.value
-        })
-        // this.setState({
-        //     [input]: e.target.value
-        // })
+    handleChange = (input) => {
+        for(let i = 0; i < input.length; i++){
+            this.setState({
+                [input[i].type] : input[i].value
+            })
+        }
     }
 
     render(){
