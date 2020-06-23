@@ -1,27 +1,33 @@
-import React, {Component} from 'react';
-import './addressinfo.css'
+import React, {useState} from 'react';
+import './addressinfo.css';
+import {useForm }from 'react-hook-form';
 
-export class AddressInfo extends Component {
-    continue = e => {
+const AddressInfo = (props) => {
+
+    const [fullname, setFullName] = useState('')
+    const next = (e) => {
         e.preventDefault();
-        this.props.nextStep()
+        props.nextStep()
     }
 
-    back = e => {
+    let back = e => {
         e.preventDefault();
-        this.props.prevStep();
+        props.prevStep();
     }
 
-    
-    render(){
-        return (
-            <div>
-                Step 2
-                <button onClick={this.continue}>Next</button>
-                <button onClick={this.back}>Back</button>
-            </div>
-        )
-    }
+    return (
+        <div>
+            <input
+                placeholder='fullname'
+                type='text'
+                // onChange={(e) => console.log(props.handleChange)}
+                onChange={ e => props.handleChange({'type' : 'fullname', 'value' : e.target.value })}
+             />
+            Step 2
+            <button onClick={next}>Next</button>
+            <button onClick={back}>Back</button>
+        </div>
+    )
 }
 
 export default AddressInfo
