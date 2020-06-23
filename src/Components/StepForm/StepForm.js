@@ -11,7 +11,9 @@ export class StepForm extends Component {
 
         this.state = {
             step: 1,
-
+            res_or_com: '',
+            intr_extr_both: '',
+            fullname: '',
         }
     }
 
@@ -31,14 +33,29 @@ export class StepForm extends Component {
         })
     }
 
+
+    // Handle Fields Change
+    handleChange = (input) => e => {
+        console.log(input)
+        this.setState({
+            [input.type] : input.value
+        })
+        // this.setState({
+        //     [input]: e.target.value
+        // })
+    }
+
     render(){
-        const {step} = this.state
-        
+        const {step, intr_extr_both, res_or_com} = this.state
+        const values = {step, intr_extr_both, res_or_com}
+        console.log(this.state)
         switch(step){
             case 1:
                 return (
                     <PropertyInfo
                         nextStep={this.nextStep}
+                        handleChange={this.handleChange}
+                        values={values}
                      />
                 )
             case 2:
@@ -46,6 +63,7 @@ export class StepForm extends Component {
                     <AddressInfo
                         nextStep={this.nextStep}
                         prevStep={this.prevStep}
+                        handleChange={this.handleChange}
                      />
                 )
             case 3:
