@@ -46,6 +46,7 @@ export class StepForm extends Component {
     render(){
         const {step, intr_extr_both, res_or_com} = this.state
         const values = {step, intr_extr_both, res_or_com}
+
         console.log(this.state)
         switch(step){
             case 1:
@@ -54,6 +55,8 @@ export class StepForm extends Component {
                         nextStep={this.nextStep}
                         handleChange={this.handleChange}
                         values={values}
+                        
+
                      />
                 )
             case 2:
