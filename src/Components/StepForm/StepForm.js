@@ -33,6 +33,13 @@ export class StepForm extends Component {
         })
     }
 
+    // Set step, when you want a specific step
+    setStep = (stepNum) => {
+        this.setState({
+            step: stepNum
+        })
+    }
+
 
     // Handle Fields Change
     handleChange = (input) => {
@@ -55,8 +62,7 @@ export class StepForm extends Component {
                         nextStep={this.nextStep}
                         handleChange={this.handleChange}
                         values={values}
-                        
-
+                        setStep={this.setStep}
                      />
                 )
             case 2:
