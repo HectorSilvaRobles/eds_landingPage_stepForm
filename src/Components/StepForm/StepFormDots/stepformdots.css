@@ -1,0 +1,21 @@
+.stepFormDotsContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 300px;
+    height: 100%;
+}
+
+.stepFormDots, .active-stepFormDots {
+    border: black solid 5px;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+.active-stepFormDots {
+    border: #62A3BE solid 5px;
+    background: #62A3BE;
+}
