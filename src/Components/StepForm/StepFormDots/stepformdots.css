@@ -7,15 +7,32 @@
 }
 
 .stepFormDots, .active-stepFormDots {
-    border: black solid 5px;
-    height: 20px;
-    width: 20px;
+    border: #454545 solid 5px;
+    height: 30px;
+    width: 30px;
     border-radius: 50%;
     cursor: pointer;
+    background: none;
 }
 
 
 .active-stepFormDots {
     border: #62A3BE solid 5px;
     background: #62A3BE;
+}
+
+#disabled-stepFormDots {
+    border: #d8d8d8 solid 5px;
+    cursor: default ;
+}
+
+
+@media screen and (max-width: 600px){
+    .stepFormDotsContainer {
+        width: 250px;
+    }
+    .stepFormDots, .active-stepFormDots {
+        height: 25px;
+        width: 25px;
+    }
 }

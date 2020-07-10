@@ -150,3 +150,18 @@
 .property_info_body_disabled {
     background: rgb(201, 201, 201);
 }
+
+/* Mobile Views */
+@media screen and (max-width: 600px){
+    .property_info {
+        width: 90%;
+    }
+    .property_info_title > p {
+        text-align: center;
+    }
+
+    .property_info_body {
+        background: red;
+        
+    }
+}

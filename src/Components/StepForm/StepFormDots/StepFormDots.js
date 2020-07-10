@@ -3,12 +3,27 @@ import './stepformdots.css'
 
 export class StepFormDots extends Component {
     render() {
+        const {res_or_com, intr_extr_both} = this.props.values
         return (
             <div className='stepFormDotsContainer'>
-                <div onClick={() => this.props.setStep(1)} className={this.props.currentStep == 1 ? 'active-stepFormDots' : 'stepFormDots'}></div>
-                <div onClick={() => this.props.setStep(2)} className={this.props.currentStep == 2 ? 'active-stepFormDots' : 'stepFormDots'}></div>
-                <div onClick={() => this.props.setStep(3)} className={this.props.currentStep == 3 ? 'active-stepFormDots' : 'stepFormDots'}></div>
-                <div onClick={() => this.props.setStep(4)} className={this.props.currentStep == 4 ? 'active-stepFormDots' : 'stepFormDots'}></div>
+                <button 
+                    onClick={() => this.props.setStep(1)} 
+                    className={this.props.currentStep == 1 ? 'active-stepFormDots' : 'stepFormDots'}></button>
+                <button 
+                    disabled={res_or_com === null || intr_extr_both === null ? true : false}
+                    onClick={() => this.props.setStep(2)} 
+                    id={res_or_com === null || intr_extr_both === null ? 'disabled-stepFormDots' : null}
+                    className={this.props.currentStep == 2 ? 'active-stepFormDots' : 'stepFormDots'}></button>
+                <button 
+                    disabled={res_or_com === null || intr_extr_both === null ? true : false}
+                    onClick={() => this.props.setStep(3)} 
+                    id={res_or_com === null || intr_extr_both === null ? 'disabled-stepFormDots' : null}
+                    className={this.props.currentStep == 3 ? 'active-stepFormDots' : 'stepFormDots'}></button>
+                <button 
+                    disabled={res_or_com === null || intr_extr_both === null ? true : false}
+                    onClick={() => this.props.setStep(4)}
+                    id={res_or_com === null || intr_extr_both === null ? 'disabled-stepFormDots' : null}
+                    className={this.props.currentStep == 4 ? 'active-stepFormDots' : 'stepFormDots'}></button>
             </div>
         )
     }
