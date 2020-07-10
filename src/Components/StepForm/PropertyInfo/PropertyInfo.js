@@ -41,7 +41,7 @@ export class PropertyInfo extends Component {
                     </div>
                     <div className='property_info_body'>
                         <div className='property_info_body_steps'>
-                            <StepFormDots currentStep={this.props.values.step} setStep={this.props.setStep} />
+                            <StepFormDots values={this.props.values} currentStep={this.props.values.step} setStep={this.props.setStep} />
                         </div>
                         <div className='property_info_body_selects'>
                             <div className='res_or_com'>
@@ -81,23 +81,6 @@ export class PropertyInfo extends Component {
                             className={res_or_com == null || intr_extr_both == null ? 'property_info_body_disabled' : 'property_info_body_submit'}
                         >continue</button>
                     </div>
-
-                    {/* <div 
-                        // onClick={this.props.handleChange({'type':'intr_extr_both', 'value':'Interior'})}
-                        style={{'width': '100px', 'height':'100px', 'background':'red'}}
-                    />
-                    <div 
-                        onClick={() => this.setState({res_or_com: 'Commerical'})}
-                        // onClick={this.props.handleChange({'type':'intr_extr_both', 'value':'Exterior'})}
-                        style={{'width': '100px', 'height':'100px', 'background':'blue'}}
-                    />
-                    <div 
-                        onClick={() => this.setState({intr_extr_both: 'Interior'})}
-                        // onClick={this.props.handleChange({'type':'intr_extr_both', 'value':'Exterior'})}
-                        style={{'width': '200px', 'height':'50px', 'background':'green'}}
-                    />
-                    Step 1
-                    <button disabled={res_or_com == null || intr_extr_both == null ? true : false} onClick={this.continue}>Next</button> */}
                 </div>
             </div>
         )
