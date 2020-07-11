@@ -13,7 +13,13 @@ export class StepForm extends Component {
             step: 1,
             res_or_com: null,
             intr_extr_both: null,
+            address: '',
+            city: '',
+            state: '',
+            zipCode: '',
             fullname: '',
+            email: '',
+            phone: ''
         }
     }
 
@@ -70,6 +76,8 @@ export class StepForm extends Component {
                     <AddressInfo
                         nextStep={this.nextStep}
                         prevStep={this.prevStep}
+                        values={values}
+                        setStep={this.setStep}
                         handleChange={this.handleChange}
                      />
                 )
@@ -78,6 +86,7 @@ export class StepForm extends Component {
                      <DateInfo
                         nextStep={this.nextStep}
                         prevStep={this.prevStep}
+                        
                       />
                  )
             case 4:

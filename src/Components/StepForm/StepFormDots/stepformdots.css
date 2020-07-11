@@ -30,9 +30,28 @@
 @media screen and (max-width: 600px){
     .stepFormDotsContainer {
         width: 250px;
+        height: 70px;
     }
     .stepFormDots, .active-stepFormDots {
         height: 25px;
         width: 25px;
+    }
+}
+
+@media screen and (max-width: 900px) and (min-width: 601px){
+    .stepFormDots, .active-stepFormDots {
+        height: 30px;
+        width: 30px;
+    }
+}
+
+@media screen and (min-width: 1900px) {
+    .stepFormDotsContainer {
+        /* background: red; */
+        width: 500px;
+    }
+    .stepFormDots, .active-stepFormDots {
+        height: 50px;
+        width: 50px;
     }
 }
