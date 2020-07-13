@@ -60,13 +60,77 @@
     align-items: center;
 }
 .addressInfoForm-div {
-    width: 75%;
+    width: 70%;
     height: 90%;
     border: solid 5px #454545;
     border-radius: 5px;
     background: white;
     margin-bottom: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
 }
+
+.addressInfoForm-div-section {
+    height: 25%;
+    width: 70%;
+    /* background: green; */
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.addressInfoForm-div-section2 {
+    /* background: green; */
+    height: 25%;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.addressInfo-state, .addressInfo-zipcode {
+    width: 45%;
+    /* background: blue; */
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+}
+
+.addressInfoForm-div-section >h1, .addressInfo-state > h1, .addressInfo-zipcode > h1 {
+    font-size: calc(20px + (24 - 20) * ((100vw - 300px) / (1900 - 300)));
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    /* height: 40%; */
+    color: #454545;
+    border-radius: 5px;
+    /* background: red; */
+}
+
+.addressInfoForm-div-section-box {
+    background: blue;
+    height: 70px;
+    width: 100%;
+    display: flex;
+}
+
+.addressInfoForm-div-section-box > select {
+    height: 100%;
+    border-radius: 0px;
+    width: 70%;
+    border: solid 5px #454545;
+}
+
+.box-icon {
+    background: #454545;
+    height: 100%;
+    width: 70px;
+}
+
 .addressInfo-buttons {
     background: blue;
     width: 100%;
@@ -90,5 +154,6 @@
 }
 
 .input {
-    border: solid black 2px;
+    border: solid #454545 5px;
+    width: 85%;
 }
