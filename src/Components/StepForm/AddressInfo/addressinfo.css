@@ -125,11 +125,23 @@
     border: solid 5px #454545;
 }
 
-.box-icon {
+.box-icon, .box-icon-error {
     background: #454545;
     height: 100%;
-    width: 70px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 0;
+    margin: 0;
+    /* font-size: 30px; */
 }
+
+.box-icon-error {
+    background: #ff3333;
+}
+
 
 .addressInfo-buttons {
     background: blue;
@@ -149,13 +161,25 @@
     cursor: pointer;
 }
 
-.error-input {
-    border: red solid 2px;
+.error-input, .error-input2 {
+    border: #ff3333 solid 5px;
+    width: 85%;
+    padding-left: 20px;
+    font-weight: bold;
+    color: #454545;
+    font-size: calc(16px + (22 - 16) * ((100vw - 300px) / (1900 - 300)));
 }
 
-.input {
+.input, .input2 {
     border: solid #454545 5px;
     width: 85%;
+    padding-left: 20px;
+    font-weight: bold;
+    color: #454545;
+    font-size: calc(16px + (22 - 16) * ((100vw - 300px) / (1900 - 300)));
+}
+.input2, .error-input2 {
+    width: 55%;
 }
 
 
