@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './addressinfo.css';
 import {useForm }from 'react-hook-form';
 import StepFormDots from '../StepFormDots/StepFormDots'
+import {FaHome, FaCity, FaLocationArrow, FaMapMarkerAlt} from 'react-icons/fa'
 
 const AddressInfo = (props) => {
     // To continue to next form
@@ -60,8 +61,8 @@ const AddressInfo = (props) => {
                                     <div className='addressInfoForm-div-section'>
                                         <h1>Address</h1>
                                         <div className='addressInfoForm-div-section-box'>
-                                            <div className='box-icon'>
-
+                                            <div className={errors.address ? 'box-icon-error' : 'box-icon'}>
+                                                <FaHome size={35} />
                                             </div>
                                             <input
                                                 placeholder='Address'
@@ -69,7 +70,7 @@ const AddressInfo = (props) => {
                                                 name='address'
                                                 defaultValue={props.values.address}
                                                 className={errors.address ? 'error-input' : 'input'}
-                                                ref={register({required: true, minLength: 5, pattern: /[A-Za-z0-9]/})}
+                                                ref={register({required: true, minLength: 3, pattern: /[A-Za-z0-9]/})}
                                             />
                                             {errors.address && console.log(errors)}
                                         </div>
@@ -77,8 +78,8 @@ const AddressInfo = (props) => {
                                     <div className='addressInfoForm-div-section'>
                                         <h1>City</h1>
                                         <div className='addressInfoForm-div-section-box'>
-                                            <div className='box-icon'>
-
+                                            <div className={errors.city ? 'box-icon-error' : 'box-icon'}>
+                                                <FaCity size={35}/>
                                             </div>
                                             <input
                                                 placeholder='City'
@@ -95,33 +96,33 @@ const AddressInfo = (props) => {
                                         <div className='addressInfo-state'>
                                             <h1>State</h1>
                                             <div className='addressInfoForm-div-section-box'>
-                                                <div className='box-icon'>
-
+                                                <div className={errors.state ? 'box-icon-error' : 'box-icon'}>
+                                                    <FaMapMarkerAlt size={30} />
                                                 </div>
                                                 <input
-                                                    placeholder='State (AZ)'
+                                                    placeholder='State'
                                                     type='text'
                                                     name='state'
                                                     defaultValue={props.values.state}
-                                                    className={errors.state ? 'error-input' : 'input'}
+                                                    className={errors.state ? 'error-input2' : 'input2'}
                                                     ref={register({required: true, minLength: 1, pattern: /[A-Za-z]/})}
                                                 />
-                                                {errors.zipcode && console.log(errors)}
+                                                {errors.state && console.log(errors)}
                                             </div>
                                            
                                         </div>
                                         <div className='addressInfo-zipcode'>
                                             <h1>Zip Code</h1>
                                             <div className='addressInfoForm-div-section-box'>
-                                                <div className='box-icon'>
-
+                                                <div className={errors.zipcode ? 'box-icon-error' : 'box-icon'}>
+                                                    <FaLocationArrow size={30} />
                                                 </div>
                                                 <input
                                                     placeholder='Zip Code'
                                                     type='text'
                                                     name='zipcode'
                                                     defaultValue={props.values.zipcode}
-                                                    className={errors.zipcode ? 'error-input' : 'input'}
+                                                    className={errors.zipcode ? 'error-input2' : 'input2'}
                                                     ref={register({required: true, minLength: 3, pattern: /[0-9]/})}
                                                 />
                                                 {errors.zipcode && console.log(errors)}
