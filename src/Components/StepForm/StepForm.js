@@ -16,7 +16,7 @@ export class StepForm extends Component {
             address: '',
             city: '',
             state: '',
-            zipCode: '',
+            zipcode: '',
             fullname: '',
             email: '',
             phone: ''
@@ -57,8 +57,8 @@ export class StepForm extends Component {
     }
 
     render(){
-        const {step, intr_extr_both, res_or_com} = this.state
-        const values = {step, intr_extr_both, res_or_com}
+        const {step, intr_extr_both, res_or_com, address, city, zipcode, state} = this.state
+        const values = {step, intr_extr_both, res_or_com, address, city, zipcode, state}
 
         console.log(this.state)
         switch(step){
