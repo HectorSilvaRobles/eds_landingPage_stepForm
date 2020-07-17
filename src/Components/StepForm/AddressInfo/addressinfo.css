@@ -199,3 +199,47 @@
     background: rgb(201, 201, 201);
     cursor: default;
 }
+
+
+
+/* Mobile View */
+@media screen and (max-width: 600px){
+    .addressInfo {
+        width: 90%;
+        height: 1000px;
+    }
+
+    .addressInfo-title {
+        text-align: center;
+        height: 15%;
+    }
+    .addressInfo-form {
+        height: 90%;
+    }
+    .addressInfoForm-div {
+        width: 90%;
+    }
+    .addressInfoForm-div-section, .addressInfoForm-div-section2 {
+        width: 90%;
+        height: 20%;
+        /* justify-content: center; */
+    }
+    .addressInfoForm-div-section {
+        justify-content: center;
+    }
+    .addressInfoForm-div-section2{
+        flex-direction: column;
+        height: 40%;
+    }
+    .addressInfo-state, .addressInfo-zipcode {
+        width: 100%;
+        justify-content: center;
+    }
+    .addressInfo-buttons {
+        height: 10%;
+    }
+
+    .addressForm {
+        height: 90%;
+    }
+}
