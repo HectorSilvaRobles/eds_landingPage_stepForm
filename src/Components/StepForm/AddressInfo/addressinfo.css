@@ -116,6 +116,8 @@
     height: 70px;
     width: 100%;
     display: flex;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .addressInfoForm-div-section-box > select {
@@ -135,6 +137,8 @@
     color: white;
     padding: 0;
     margin: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
     /* font-size: 30px; */
 }
 
@@ -212,6 +216,10 @@
     .addressInfo-title {
         text-align: center;
         height: 15%;
+        margin-bottom: 20px;
+    }
+    .addressInfo-body {
+        height: 80%;
     }
     .addressInfo-form {
         height: 90%;
@@ -219,20 +227,37 @@
     .addressInfoForm-div {
         width: 90%;
     }
+    .box-icon, .box-icon-error {
+        width: 80px;
+    }
+    .input2, .error-input2 {
+        width: 85%;
+    }
     .addressInfoForm-div-section, .addressInfoForm-div-section2 {
         width: 90%;
         height: 20%;
+        margin: 5px 0;
         /* justify-content: center; */
+    }
+    .addressInfoForm-div {
+        justify-content: center;
+        height: 90%;
     }
     .addressInfoForm-div-section {
         justify-content: center;
     }
     .addressInfoForm-div-section2{
         flex-direction: column;
-        height: 40%;
+        justify-content: space-between;
+        height: 45%;
+    }
+    .addressInfoForm-div-section-box {
+        height: 60px;
     }
     .addressInfo-state, .addressInfo-zipcode {
         width: 100%;
+        margin: 10px 0;
+
         justify-content: center;
     }
     .addressInfo-buttons {
@@ -241,5 +266,51 @@
 
     .addressForm {
         height: 90%;
+    }
+
+    .addressInfoForm-div-section >h1, .addressInfo-state > h1, .addressInfo-zipcode > h1 {
+        margin-bottom: 10px;
+    }
+
+    .form-backButton {
+        width: 35%;
+    }
+    .stepform-next-button, .stepform-next-button-disabled {
+        width: 65%;
+    }
+
+    .input, .input2 {
+        padding-left: 15px;
+    }
+}
+
+
+@media screen and (max-width: 900px) and (min-width: 601px){
+    .addressInfo {
+        width: 90%;
+    }
+    .addressInfoForm-div {
+        width: 85%;
+    }
+    .addressInfoForm-div-section, .addressInfoForm-div-section2 {
+        width: 80%;
+    }
+    .addressInfo-form {
+        height: 87%;
+    }
+    .addressInfo-buttons {
+        height: 13%;
+    }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1200px){
+    .addressInfo {
+        width: 80%;
+    }
+    .addressInfoForm-div {
+        width: 80%;
+    }
+    .addressInfoForm-div-section, .addressInfoForm-div-section2 {
+        width: 80%;
     }
 }
