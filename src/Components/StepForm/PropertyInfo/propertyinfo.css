@@ -247,11 +247,14 @@
     .property_info{
         /* background: red; */
         width: 65%;
-        height: 1400px;
+        height: 1500px;
     }
 
     .property_info_title > h1 {
         font-size: calc(60px + (90 - 60) * ((100vw - 300px) / (1900 - 300)));
+    }
+    .property_info_title > p {
+        font-size: calc(40px + (50 - 40) * ((100vw - 300px) / (1900 - 300)));
     }
 
     .property_info_body {
