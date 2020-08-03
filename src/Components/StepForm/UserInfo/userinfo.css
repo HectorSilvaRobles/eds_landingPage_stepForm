@@ -1,0 +1,25 @@
+@media screen and (max-width: 600px){
+    .userInfo {
+        height: 900px;
+    }
+    .userInfo-body-steps {
+        height: 80px;
+    }
+    .userInfo-buttons {
+        height: 72px;
+    }
+
+    .userInfoForm-div {
+        justify-content: space-evenly;
+        height: 90%;
+    }
+    .userInfo-title {
+        height: 150px;
+    }
+    .userInfoForm-div-section {
+        height: 273px;
+    }
+    .userInfo-body {
+        height: 700px;
+    }
+}
