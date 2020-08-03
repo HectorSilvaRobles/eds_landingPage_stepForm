@@ -13,7 +13,7 @@ export class DateInfo extends Component {
         this.props.prevStep();
     }
 
-    
+
     render(){
         return (
             <div className='stepform'>
@@ -30,7 +30,8 @@ export class DateInfo extends Component {
 
                         </div>
                         <div className='dateInfo-buttons'>
-
+                            <button className='dateInfo-buttons-back' onClick={this.back}>Back</button>
+                            <button className='dateInfo-buttons-next' onClick={this.continue}>Next</button>
                         </div>
                     </div>
                 </div>

@@ -92,6 +92,7 @@ export class StepForm extends Component {
                         prevStep={this.prevStep}
                         values={values}
                         setStep={this.setStep}
+                        handleChange={this.handleChange}
                       />
                  )
             case 4:

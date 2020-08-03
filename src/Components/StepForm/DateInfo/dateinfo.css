@@ -46,8 +46,8 @@
 }
 
 .dateInfo-stepformdots-div {
-    background: red;
-    height: 10%;
+    /* background: red; */
+    height: 75px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -55,7 +55,7 @@
 }
 .dateInfo-stepformdots-body {
     background: blue;
-    height: 75%;
+    height: 590px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -63,7 +63,34 @@
 }
 
 .dateInfo-buttons {
-    height: 15%;
+    height: 85px;
     width: 100%;
     border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dateInfo-buttons-back {
+    height: 100%;
+    width: 25%;
+    border: none;
+    cursor: pointer;
+    background: #454545;
+    color: white;
+    font-size: calc(30px + (35 - 30) * ((100vw - 300px) / (1900 - 300)));
+    font-weight: bold;
+}
+
+.dateInfo-buttons-next {
+    height: 100%;
+    width: 75%;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: calc(30px + (35 - 30) * ((100vw - 300px) / (1900 - 300)));
+    background: #62A3BE;
+    cursor: pointer;;
 }
