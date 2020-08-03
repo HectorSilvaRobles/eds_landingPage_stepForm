@@ -19,7 +19,11 @@ export class StepForm extends Component {
             zipcode: '',
             fullname: '',
             email: '',
-            phone: ''
+            phone: '',
+            estimateTime : {
+                date_of_estimate: '',
+                time_of_estimate: ''
+            }
         }
     }
 
@@ -57,8 +61,8 @@ export class StepForm extends Component {
     }
 
     render(){
-        const {step, intr_extr_both, res_or_com, address, city, zipcode, state} = this.state
-        const values = {step, intr_extr_both, res_or_com, address, city, zipcode, state}
+        const {step, intr_extr_both, res_or_com, address, city, zipcode, state, estimateTime} = this.state
+        const values = {step, intr_extr_both, res_or_com, address, city, zipcode, state, estimateTime}
 
         console.log(this.state)
         switch(step){
@@ -86,7 +90,8 @@ export class StepForm extends Component {
                      <DateInfo
                         nextStep={this.nextStep}
                         prevStep={this.prevStep}
-                        
+                        values={values}
+                        setStep={this.setStep}
                       />
                  )
             case 4:

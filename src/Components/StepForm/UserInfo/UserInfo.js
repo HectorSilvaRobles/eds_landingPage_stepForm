@@ -21,23 +21,20 @@ const UserInfo = (props) => {
     const {register, handleSubmit, formState, errors} = useForm({mode: 'onChange'})
     // On submit update state with new values
     const onSubmit = (data) => {
-        const {address, city, state, zipcode} = data
+        console.log(data)
+        const {fullname, email, phone} = data
         props.handleChange([
             {
-                "type":"address",
-                "value": address.toUpperCase()
+                "type":"fullname",
+                "value": fullname.toUpperCase()
             },
             {
-                "type":"city",
-                "value": city.toUpperCase()
+                "type":"email",
+                "value": email.toUpperCase()
             },
             {
-                "type":"state",
-                "value": state.toUpperCase()
-            },
-            {
-                "type":"zipcode",
-                "value": zipcode.toUpperCase()
+                "type":"phone",
+                "value": phone.toUpperCase()
             }
         ])
         next()
@@ -46,73 +43,73 @@ const UserInfo = (props) => {
     
     return (
         <div className='stepform'>
-            <div className='addressInfo'>
-                    <div className='addressInfo-title'>
-                        <h1>Location Of Estimate</h1>
+            <div className='addressInfo userInfo'>
+                    <div className='addressInfo-title userInfo-title'>
+                        <h1>Contact Information</h1>
                         <p>Let us know where to be.</p>
                     </div>
-                    <div className='addressInfo-body'>
-                        <div className='property_info_body_steps'>
+                    <div className='addressInfo-body userInfo-body'>
+                        <div className='property_info_body_steps userInfo-body-steps'>
                             <StepFormDots values={props.values} currentStep={props.values.step} setStep={props.setStep} />
                         </div>
-                        <form onSubmit={handleSubmit(onSubmit)} className='addressForm'>
+                        <form onSubmit={handleSubmit(onSubmit)} className='addressForm userForm'>
                             <div className='addressInfo-form'>
-                                <div className='addressInfoForm-div'>
-                                    <div className='addressInfoForm-div-section'>
+                                <div className='addressInfoForm-div userInfoForm-div'>
+                                    <div className='addressInfoForm-div-section .userInfoForm-div-section'>
                                         <h1>Fullname</h1>
                                         <div className='addressInfoForm-div-section-box'>
-                                            <div className={errors.address ? 'box-icon-error' : 'box-icon'}>
+                                            <div className={errors.fullname ? 'box-icon-error' : 'box-icon'}>
                                                 <IoMdPerson size={35} />
                                             </div>
                                             <input
-                                                placeholder='Address'
+                                                placeholder='Fullname'
                                                 type='text'
-                                                name='address'
-                                                defaultValue={props.values.address}
-                                                className={errors.address ? 'error-input' : 'input'}
-                                                ref={register({required: true, minLength: 3, pattern: /[A-Za-z0-9]/})}
+                                                name='fullname'
+                                                defaultValue={props.values.fullname}
+                                                className={errors.fullname ? 'error-input' : 'input'}
+                                                ref={register({required: true, minLength: 3, pattern: /[A-Za-z]/})}
                                             />
-                                            {errors.address && console.log(errors)}
+                                            {errors.fullname && console.log(errors)}
                                         </div>
                                     </div>
                                     <div className='addressInfoForm-div-section'>
                                         <h1>Email</h1>
                                         <div className='addressInfoForm-div-section-box'>
-                                            <div className={errors.city ? 'box-icon-error' : 'box-icon'}>
+                                            <div className={errors.email ? 'box-icon-error' : 'box-icon'}>
                                                 <IoMdMail size={35}/>
                                             </div>
                                             <input
-                                                placeholder='City'
+                                                placeholder='Email'
                                                 type='text'
-                                                name='city'
-                                                defaultValue={props.values.city}
-                                                className={errors.city ? 'error-input' : 'input'}
-                                                ref={register({required: true, minLength: 3, pattern: /[A-Za-z]/})}
+                                                name='email'
+                                                defaultValue={props.values.email}
+                                                className={errors.email ? 'error-input' : 'input'}
+                                                ref={register({required: true, minLength: 5, pattern: /[A-Za-z0-9]/})}
                                             />
-                                            {errors.city && console.log(errors)}
+                                            {errors.email && console.log(errors)}
                                         </div>
                                     </div>
                                     <div className='addressInfoForm-div-section'>
                                         <h1>Phone</h1>
                                         <div className='addressInfoForm-div-section-box'>
-                                            <div className={errors.city ? 'box-icon-error' : 'box-icon'}>
+                                            <div className={errors.phone ? 'box-icon-error' : 'box-icon'}>
                                                 <FaPhoneAlt size={35}/>
                                             </div>
                                             <input
-                                                placeholder='City'
+                                                placeholder='Phone'
                                                 type='text'
-                                                name='city'
-                                                defaultValue={props.values.city}
-                                                className={errors.city ? 'error-input' : 'input'}
-                                                ref={register({required: true, minLength: 3, pattern: /[A-Za-z]/})}
+                                                name='phone'
+                                                defaultValue={props.values.phone}
+                                                className={errors.phone ? 'error-input' : 'input'}
+                                                ref={register({required: true, minLength: 3, pattern: /[0-9]/})}
                                             />
-                                            {errors.city && console.log(errors)}
+                                            {errors.phone && console.log(errors)}
                                         </div>
                                     </div>
                                     
                                 </div>
                             </div>
-                            <div className='addressInfo-buttons'>
+                            <div className='addressInfo-buttons userInfo-buttons'>
                                 <button onClick={back} className='form-backButton' >Back</button>
                                 <button 
                                     type="submit" 

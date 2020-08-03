@@ -104,7 +104,7 @@
     font-size: calc(20px + (24 - 20) * ((100vw - 300px) / (1900 - 300)));
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    text-transform: uppercase;
+    text-transform: capitalize;
     /* height: 40%; */
     color: #454545;
     border-radius: 5px;

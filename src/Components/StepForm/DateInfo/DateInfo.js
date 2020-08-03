@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './dateinfo.css'
+import StepFormDots from '../StepFormDots/StepFormDots'
 
 export class DateInfo extends Component {
     continue = e => {
@@ -15,10 +16,24 @@ export class DateInfo extends Component {
     
     render(){
         return (
-            <div>
-                Step 3
-                <button onClick={this.continue}>Next</button>
-                <button onClick={this.back}>Back</button>
+            <div className='stepform'>
+                <div className='dateInfo'>
+                    <div className='dateInfo-title'>
+                        <h1>Date Selection</h1>
+                        <h2>Choose a date and time for the estimate.</h2>
+                    </div>
+                    <div className='dateInfo-body'>
+                        <div className='dateInfo-stepformdots-div'>
+                            <StepFormDots values={this.props.values} currentStep={this.props.values.step} setStep={this.props.setStep} />
+                        </div>
+                        <div className='dateInfo-stepformdots-body'>
+
+                        </div>
+                        <div className='dateInfo-buttons'>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
