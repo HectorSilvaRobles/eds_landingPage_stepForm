@@ -3,7 +3,8 @@ import './stepformdots.css'
 
 export class StepFormDots extends Component {
     render() {
-        const {res_or_com, intr_extr_both} = this.props.values
+        const {res_or_com, intr_extr_both, address, city, state, zipcode, estimateTime} = this.props.values
+
         return (
             <div className='stepFormDotsContainer'>
                 <button 
@@ -15,12 +16,12 @@ export class StepFormDots extends Component {
                     id={res_or_com === null || intr_extr_both === null ? 'disabled-stepFormDots' : null}
                     className={this.props.currentStep == 2 ? 'active-stepFormDots' : 'stepFormDots'}></button>
                 <button 
-                    disabled={res_or_com === null || intr_extr_both === null ? true : false}
+                    disabled={res_or_com === null || intr_extr_both === null || address === null || city === null || state === null || zipcode === null ? true : false}
                     onClick={() => this.props.setStep(3)} 
-                    id={res_or_com === null || intr_extr_both === null ? 'disabled-stepFormDots' : null}
+                    id={res_or_com === null || intr_extr_both === null || address === null || city === null || state === null || zipcode === null ? 'disabled-stepFormDots' : null}
                     className={this.props.currentStep == 3 ? 'active-stepFormDots' : 'stepFormDots'}></button>
                 <button 
-                    disabled={res_or_com === null || intr_extr_both === null ? true : false}
+                    disabled={res_or_com === null || intr_extr_both === null || address === null || city === null || state === null || zipcode === null  ? true : false}
                     onClick={() => this.props.setStep(4)}
                     id={res_or_com === null || intr_extr_both === null ? 'disabled-stepFormDots' : null}
                     className={this.props.currentStep == 4 ? 'active-stepFormDots' : 'stepFormDots'}></button>
