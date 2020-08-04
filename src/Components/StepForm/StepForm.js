@@ -13,16 +13,16 @@ export class StepForm extends Component {
             step: 1,
             res_or_com: null,
             intr_extr_both: null,
-            address: '',
-            city: '',
-            state: '',
-            zipcode: '',
-            fullname: '',
-            email: '',
-            phone: '',
+            address: null,
+            city: null,
+            state: null,
+            zipcode: null,
+            fullname: null,
+            email: null,
+            phone: null,
             estimateTime : {
-                date_of_estimate: '',
-                time_of_estimate: ''
+                date_of_estimate: null,
+                time_of_estimate: null
             }
         }
     }
