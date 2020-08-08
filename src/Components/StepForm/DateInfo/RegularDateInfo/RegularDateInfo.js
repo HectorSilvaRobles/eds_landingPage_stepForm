@@ -35,6 +35,9 @@ export class RegularDateInfo extends Component {
                             <Calendar 
                                 onChange={this.calendarOnChange}
                                 value={this.state.date}
+                                calendarType={"US"}
+                                minDetail={'month'}
+                                // next2Label={''}
                             />
                         </div>
                         <div className={this.state.selectOption == 'time' ? 'content-time-active' : 'content-time-hidden'}>
