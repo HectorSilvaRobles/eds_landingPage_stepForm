@@ -54,7 +54,7 @@
     align-items: center;
 }
 .dateInfo-stepformdots-body {
-    background: blue;
+    /* background: blue; */
     height: 590px;
     width: 100%;
     display: flex;
@@ -93,4 +93,77 @@
     font-size: calc(30px + (35 - 30) * ((100vw - 300px) / (1900 - 300)));
     background: #62A3BE;
     cursor: pointer;;
+}
+
+.dateInfo-mobile {
+    display: none;
+}
+
+
+/* Mobile view */
+@media screen and (max-width: 600px){
+    .dateInfo {
+        width: 90%;
+    }
+
+    .dateInfo-regular {
+        display: none;
+    }
+    .dateInfo-mobile {
+        display: block;
+    }
+}
+
+/* Tablet view */
+@media screen and (max-width: 900px) and (min-width: 601px){
+    .dateInfo {
+        width: 90%;
+    }
+}
+
+/* Laptop/tablet large view */
+@media screen and (min-width: 901px) and (max-width: 1300px){
+    .dateInfo {
+        width: 80%;
+    }
+}
+
+/* 4k view */
+@media screen and (min-width: 1800px) {
+    .dateInfo {
+        width: 65%;
+        height:1500px;
+    }
+
+    .dateInfo-title {
+        height: 300px;
+    }
+
+    .dateInfo-title > h1 {
+        font-size: calc(60px + (90 - 60) * ((100vw - 300px) / (1900 - 300)));
+    }
+    .dateInfo-title > h2 {
+        font-size: calc(40px + (50 - 40) * ((100vw - 300px) / (1900 - 300)));
+    }
+
+    .dateInfo-body {
+        height: 1200px;
+    }
+
+    .dateInfo-stepformdots-div {
+        height: 143px;
+    }
+
+    .dateInfo-stepformdots-body {
+        height: 890px;
+    }
+
+    .dateInfo-buttons {
+        height: 157px;
+    }
+
+    .dateInfo-buttons-back, .dateInfo-buttons-next {
+        font-size: calc(40px + (50 - 40) * ((100vw - 300px) / (1900 - 300)));
+
+    }
 }
