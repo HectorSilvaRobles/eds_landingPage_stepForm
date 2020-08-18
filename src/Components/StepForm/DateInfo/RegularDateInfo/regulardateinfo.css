@@ -92,6 +92,45 @@
     width: 100%;
 }
 
+.content-time-active {
+    /* background: green; */
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, .5fr);
+    align-items: center;
+    justify-items: center;
+}
+
+.content-time-active > div {
+    /* background: red; */
+    height: 50px;
+    width: 100px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border: solid 5px #707070;
+    color: #707070;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.time-option-active {
+    background: #62A3BE;
+    border: solid 5px #62A3BE !important;
+    color: white !important;
+}
+
+#time-option-taken {
+    border: solid 5px #cecece;
+    color: #cecece;
+    pointer-events: none;;
+}
+
+
 .dateInfo-reg-body-option, .select-option-active {
     height: 30%;
     width: 80%;
@@ -109,7 +148,7 @@
     border: solid 5px rgb(235, 235, 235);
     color: #bfbfbf;
     background: rgb(235, 235, 235);
-    
+    cursor: default;
 }
 
 .select-option-active {

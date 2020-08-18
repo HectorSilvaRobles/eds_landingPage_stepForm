@@ -52,8 +52,12 @@ export class RegularDateInfo extends Component {
         this.setState({dateOfEstimate, date})
     }
 
+    timeOfEstimateOnChange = (time) => {
+        this.setState({timeOfEstimate: time})
+    }
+
     render() {
-        console.log(this.state.takenTimes)
+        console.log(this.state.takenTimes.includes('3 PM'))
         return (
             <div className='dateInfo-regular'>
                 <div className='dateInfo-regular-header'>
@@ -64,7 +68,7 @@ export class RegularDateInfo extends Component {
                         </div>
                         <div className='dateInfo-regular-header-time'>
                             <h2>Time</h2>
-                            <h1>{this.state.timeOfEstimate == null ? '- -- ----' : this.state.dateOfEstimate}</h1>
+                            <h1>{this.state.timeOfEstimate == null ? '- -- ----' : `${this.state.timeOfEstimate}`}</h1>
                         </div>
                     </div>
                     
@@ -80,7 +84,78 @@ export class RegularDateInfo extends Component {
                             />
                         </div>
                         <div className={this.state.selectOption == 'time' ? 'content-time-active' : 'content-time-hidden'}>
-                        time
+                           <div 
+                            id={this.state.takenTimes.includes('7 AM') ? 'time-option-taken' : null} 
+                            disabled={this.state.takenTimes.includes('7 AM') ? true : false}
+                            className={this.state.timeOfEstimate === '7 AM' ? 'time-option-active' : null} 
+                            onClick={() => this.timeOfEstimateOnChange('7 AM')} 
+                            >7 AM</div>
+                           <div 
+                            id={this.state.takenTimes.includes('8 AM') ? 'time-option-taken' : null} 
+                            disabled={this.state.takenTimes.includes('8 AM') ? true : false}
+                            className={this.state.timeOfEstimate === '8 AM' ? 'time-option-active' : null} 
+                            onClick={() => this.timeOfEstimateOnChange('8 AM')} 
+                            >8 AM</div>
+                           <div 
+                            id={this.state.takenTimes.includes('9 AM') ? 'time-option-taken' : null}
+                            disabled={this.state.takenTimes.includes('9 AM') ? true : false}
+                            className={this.state.timeOfEstimate === '9 AM' ? 'time-option-active' : null} 
+                            onClick={() => this.timeOfEstimateOnChange('9 AM')} 
+                            >9 AM</div>
+                           <div 
+                            id={this.state.takenTimes.includes('10 AM') ? 'time-option-taken' : null}
+                            disabled={this.state.takenTimes.includes('10 AM') ? true : false}
+                            className={this.state.timeOfEstimate === '10 AM' ? 'time-option-active' : null} 
+                            onClick={() => this.timeOfEstimateOnChange('10 AM')} 
+                            >10 AM</div>
+                           <div 
+                            id={this.state.takenTimes.includes('11 AM') ? 'time-option-taken' : null}
+                            disabled={this.state.takenTimes.includes('11 AM') ? true : false}
+                            className={this.state.timeOfEstimate === '11 AM' ? 'time-option-active' : null} 
+                            onClick={() => this.timeOfEstimateOnChange('11 AM')} 
+                            >11 AM</div>
+                           <div 
+                            id={this.state.takenTimes.includes('12 PM') ? 'time-option-taken' : null}
+                            disabled={this.state.takenTimes.includes('12 PM') ? true : false}
+                            className={this.state.timeOfEstimate === '12 PM' ? 'time-option-active' : null} 
+                            onClick={() => this.timeOfEstimateOnChange('12 PM')} 
+                            >12 PM</div>
+                           <div 
+                            id={this.state.takenTimes.includes('1 PM') ? 'time-option-taken' : null}
+                            disabled={this.state.takenTimes.includes('1 PM') ? true : false}
+                            className={this.state.timeOfEstimate === '1 PM' ? 'time-option-active' : null} 
+                            onClick={() => this.timeOfEstimateOnChange('1 PM')} 
+                            >1 PM</div>
+                           <div 
+                            id={this.state.takenTimes.includes('2 PM') ? 'time-option-taken' : null} 
+                            disabled={this.state.takenTimes.includes('2 PM') ? true : false}
+                            className={this.state.timeOfEstimate === '2 PM' ? 'time-option-active' : null} 
+                            onClick={() => this.timeOfEstimateOnChange('2 PM')}
+                            >2 PM</div>
+                           <div 
+                            id={this.state.takenTimes.includes('3 PM') ? 'time-option-taken' : null}
+                            disabled={this.state.takenTimes.includes('3 PM') ? true : false}
+                            className={this.state.timeOfEstimate === '3 PM' ? 'time-option-active' : null} 
+                            onClick={() => this.timeOfEstimateOnChange('3 PM')} 
+                            >3 PM</div>
+                           <div 
+                            id={this.state.takenTimes.includes('4 PM') ? 'time-option-taken' : null}
+                            disabled={this.state.takenTimes.includes('4 PM') ? true : false}
+                            className={this.state.timeOfEstimate === '4 PM' ? 'time-option-active' : null} 
+                            onClick={() => this.timeOfEstimateOnChange('4 PM')} 
+                            >4 PM</div>
+                           <div 
+                            id={this.state.takenTimes.includes('5 PM') ? 'time-option-taken' : null}
+                            disabled={this.state.takenTimes.includes('5 PM') ? true : false}
+                            className={this.state.timeOfEstimate === '5 PM' ? 'time-option-active' : null} 
+                            onClick={() => this.timeOfEstimateOnChange('5 PM')} 
+                            >5 PM</div>
+                           <div 
+                            id={this.state.takenTimes.includes('6 PM') ? 'time-option-taken' : null}
+                            disabled={this.state.takenTimes.includes('6 PM') ? true : false}
+                            className={this.state.timeOfEstimate === '6 PM' ? 'time-option-active' : null} 
+                            onClick={() => this.timeOfEstimateOnChange('6 PM')} 
+                            >6 PM</div>
                         </div>
                     </div>
                     <div className='dateInfo-reg-body-select'>
