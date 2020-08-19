@@ -100,8 +100,8 @@
 }
 
 
-/* Mobile view */
-@media screen and (max-width: 600px){
+/* Mobile view and small tablet */
+@media screen and (max-width: 900px){
     .dateInfo {
         width: 90%;
     }
@@ -115,16 +115,22 @@
 }
 
 /* Tablet view */
-@media screen and (max-width: 900px) and (min-width: 601px){
+/* @media screen and (max-width: 900px) and (min-width: 601px){
     .dateInfo {
         width: 90%;
     }
-}
+} */
 
 /* Laptop/tablet large view */
-@media screen and (min-width: 901px) and (max-width: 1300px){
+@media screen and (min-width: 901px) and (max-width: 1200px){
     .dateInfo {
         width: 80%;
+    }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1600px){
+    .dateInfo {
+        width: 70%;
     }
 }
 

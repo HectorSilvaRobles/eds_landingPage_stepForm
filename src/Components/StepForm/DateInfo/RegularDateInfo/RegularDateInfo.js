@@ -49,7 +49,7 @@ export class RegularDateInfo extends Component {
         axios.post('https://xjsollrqdb.execute-api.us-west-1.amazonaws.com/EDS_GET_Date_Of_Estimates/day', {estimateDate: dateOfEstimate})
         .then(res => this.setState({takenTimes: res.data.body}))
 
-        this.setState({dateOfEstimate, date})
+        this.setState({dateOfEstimate, date, timeOfEstimate: null})
     }
 
     timeOfEstimateOnChange = (time) => {
@@ -57,7 +57,6 @@ export class RegularDateInfo extends Component {
     }
 
     render() {
-        console.log(this.state.takenTimes.includes('3 PM'))
         return (
             <div className='dateInfo-regular'>
                 <div className='dateInfo-regular-header'>
