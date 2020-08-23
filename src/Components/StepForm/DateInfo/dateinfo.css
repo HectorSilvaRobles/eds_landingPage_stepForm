@@ -95,6 +95,11 @@
     cursor: pointer;;
 }
 
+#date_info_button_disabled {
+    background: rgb(201, 201, 201);
+    cursor: default;
+}
+
 .dateInfo-mobile {
     display: none;
 }
@@ -111,6 +116,12 @@
     }
     .dateInfo-mobile {
         display: block;
+    }
+}
+
+@media screen and (min-width: 901px){
+    .dateInfo-mobile {
+        display: none !important;
     }
 }
 

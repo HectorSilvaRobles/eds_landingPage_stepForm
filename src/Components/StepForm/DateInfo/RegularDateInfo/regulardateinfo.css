@@ -196,7 +196,6 @@
 .react-calendar__navigation__next2-button {
     display: none !important;
 }
-
 .react-calendar__navigation__label {
     background: #454545 !important;
     padding: 0 !important;
@@ -275,9 +274,11 @@
 .react-calendar__tile--now {
     background: none !important;
 }
+
 .react-calendar__tile--active {
     background: #62A3BE !important;
 }
+
 .react-calendar__tile--active > abbr {
     color: white !important;
 }

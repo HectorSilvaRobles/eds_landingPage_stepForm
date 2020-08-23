@@ -20,10 +20,8 @@ export class StepForm extends Component {
             fullname: null,
             email: null,
             phone: null,
-            estimateTime : {
-                date_of_estimate: null,
-                time_of_estimate: null
-            }
+            date_of_estimate: null,
+            time_of_estimate: null
         }
     }
 
@@ -61,8 +59,8 @@ export class StepForm extends Component {
     }
 
     render(){
-        const {step, intr_extr_both, res_or_com, address, city, zipcode, state, estimateTime} = this.state
-        const values = {step, intr_extr_both, res_or_com, address, city, zipcode, state, estimateTime}
+        const {step, intr_extr_both, res_or_com, address, city, zipcode, state, date_of_estimate, time_of_estimate} = this.state
+        const values = {step, intr_extr_both, res_or_com, address, city, zipcode, state, date_of_estimate, time_of_estimate}
 
         console.log(this.state)
         switch(step){

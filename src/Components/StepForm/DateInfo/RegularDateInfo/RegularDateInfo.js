@@ -12,8 +12,8 @@ export class RegularDateInfo extends Component {
             selectOption: 'date',
             date: new Date(),
             takenTimes: [],
-            dateOfEstimate: null,
-            timeOfEstimate: null
+            dateOfEstimate: this.props.values.date_of_estimate ? this.props.values.date_of_estimate : null,
+            timeOfEstimate: this.props.values.time_of_estimate ? this.props.values.time_of_estimate : null
         }
     }
 
@@ -50,10 +50,31 @@ export class RegularDateInfo extends Component {
         .then(res => this.setState({takenTimes: res.data.body}))
 
         this.setState({dateOfEstimate, date, timeOfEstimate: null})
+
+        // Set date in parent state
+        this.props.handleChange([
+            {
+                "type" : "date_of_estimate",
+                "value" : dateOfEstimate
+            }
+            , 
+            {
+                "type" : "time_of_estimate",
+                "value" : null
+            }
+        ])
     }
 
+    // update new time selection in state 
     timeOfEstimateOnChange = (time) => {
         this.setState({timeOfEstimate: time})
+        // Set time in parent state
+        this.props.handleChange([
+            {
+                "type" : "time_of_estimate",
+                "value" : time
+            }
+        ])
     }
 
     render() {
@@ -164,7 +185,7 @@ export class RegularDateInfo extends Component {
                             >Date</button>
                         <button 
                             className={this.state.selectOption == 'time' ? 'select-option-active' :'dateInfo-reg-body-option'} 
-                            disabled={this.state.dateOfEstimate == null ? true : false}
+                            disabled={this.state.dateOfEstimate == null  ? true : false}
                             id={this.state.dateOfEstimate == null ? 'select-option-disabled' : 'dateInfo-reg-body-option'}
                             onClick={() => this.setSelectOption('time')}
                             >Time</button>

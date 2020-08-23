@@ -17,12 +17,13 @@ export class DateInfo extends Component {
 
 
     render(){
+        console.log(this.props.values)
         return (
             <div className='stepform'>
                 <div className='dateInfo'>
                     <div className='dateInfo-title'>
                         <h1>Date Selection</h1>
-                        <h2>Choose a date and time for the estimate.</h2>
+                        <h2>Choose a date and time.</h2>
                     </div>
                     <div className='dateInfo-body'>
                         <div className='dateInfo-stepformdots-div'>
@@ -32,12 +33,17 @@ export class DateInfo extends Component {
                             setStep={this.props.setStep} />
                         </div>
                         <div className='dateInfo-stepformdots-body'>
-                            <RegularDateInfo className='dateInfo-regular' />
+                            <RegularDateInfo className='dateInfo-regular' values={this.props.values} handleChange={this.props.handleChange} />
                             <MobileDateInfo className='dateInfo-mobile' />
                         </div>
                         <div className='dateInfo-buttons'>
                             <button className='dateInfo-buttons-back' onClick={this.back}>Back</button>
-                            <button className='dateInfo-buttons-next' onClick={this.continue}>Next</button>
+                            <button 
+                                className='dateInfo-buttons-next' 
+                                disabled={!this.props.values.time_of_estimate || !this.props.values.date_of_estimate ? true : false } 
+                                id={!this.props.values.time_of_estimate || !this.props.values.date_of_estimate ? 'date_info_button_disabled' : 'date_info_button_submit'}
+                                onClick={this.continue}
+                            >Next</button>
                         </div>
                     </div>
                 </div>
