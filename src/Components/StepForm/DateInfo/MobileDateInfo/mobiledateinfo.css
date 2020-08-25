@@ -49,6 +49,35 @@
 
 .dateInfo-modal-div {
     background: green;
-    height: 80%;
-    width: 80%;
+    /* height: 80%; */
+    width: 90%;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.dateInfo-modal-div-header {
+    height: 80px;
+    width: 100%;
+    background: red;
+}
+.dateInfo-modal-div-body {
+    height: 500px;
+    width: 100%;
+    background: orange;
+}
+.dateInfo-modal-div-button {
+    height: 100px;
+    width: 100%;
+    background: blue;
+}
+
+.backdrop-modal{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
