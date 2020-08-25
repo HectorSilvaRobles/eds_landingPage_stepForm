@@ -47,8 +47,13 @@ export class MobileDateInfo extends Component {
                     <Modal
                         open={this.state.dateModal}
                         onClose={() => this.setState({dateModal: false})}
+                        className='backdrop-modal'
                     >
-                        <div className='dateInfo-modal-div'></div>
+                        <div className='dateInfo-modal-div'>
+                            <div className='dateInfo-modal-div-header'></div>
+                            <div className='dateInfo-modal-div-body'></div>
+                            <div className='dateInfo-modal-div-button'></div>
+                        </div>
                     </Modal>
                     <div 
                         className='dateInfo-mobile-body-modal'
@@ -57,8 +62,13 @@ export class MobileDateInfo extends Component {
                     <Modal
                         open={this.state.timeModal}
                         onClose={() => this.setState({timeModal: false})}
+                        className='backdrop-modal'
                     >
-                        <div className='dateInfo-modal-div'></div>
+                        <div className='dateInfo-modal-div'>
+                            <div className='dateInfo-modal-div-header'></div>
+                            <div className='dateInfo-modal-div-body'></div>
+                            <div className='dateInfo-modal-div-button'></div>
+                        </div>
                         
                     </Modal>
                 </div>
