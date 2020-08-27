@@ -75,6 +75,43 @@ export class MobileDateInfo extends Component {
         // ])
     }
 
+    // Format calendar for mobile
+    formatDate = (date, selected) => {
+        if(selected == 'MMMM YYYY'){
+            let theMonths = {
+                1 : 'Jan',
+                2 : 'Feb',
+                3 : 'Mar',
+                4 : 'Apr',
+                5 : 'May',
+                6 : 'Jun',
+                7 : 'Jul',
+                8 : 'Aug',
+                9 : 'Sep',
+                10 : 'Oct',
+                11 : 'Nov',
+                12 : 'Dec'
+            }
+            let month = date.getMonth() + 1
+            let year = date.getFullYear()
+            let monthName = theMonths[month]
+            let dateOfEstimate = `${monthName} ${year}`
+            return dateOfEstimate
+        } else if (selected == 'dd'){
+            let theWeekday = {
+                1 : 'S',
+                2 : 'M',
+                3 : 'T',
+                4 : 'W',
+                5 : 'T',
+                6 : 'F',
+                7 : 'S'
+            }
+            let weekday = date.getDay() + 1
+            let shortWeekday = theWeekday[weekday]
+            console.log(shortWeekday)
+        }
+    }
 
     render() {
         console.log(this.state)
@@ -109,7 +146,8 @@ export class MobileDateInfo extends Component {
                                     value={this.state.date}
                                     calendarType={"US"}
                                     minDetail={'month'}
-                                    // formatMonthYear={(locale, date) => formatDate(date, 'MMMM YYYY')}
+                                    formatMonthYear={(locale, date) => this.formatDate(date, 'MMMM YYYY')}
+                                    formatShortWeekday={(local, date) => this.formatDate(date, 'dd')}
                                 />
                             </div>
                             <div className='dateInfo-modal-div-button'></div>

@@ -83,7 +83,7 @@
 }
 
 .dateInfo-modal-div-header {
-    height: 70px;
+    height: 60px;
     width: 100%;
     background: #62A3BE;
 
@@ -115,13 +115,20 @@
     }
     .react-calendar__navigation__arrow, .react-calendar__navigation__label {
         height: 80px !important;
+        display: flex;
+        align-items: center;
     }
     .react-calendar__navigation > .react-calendar__navigation__arrow:enabled {
         width: 15% !important;
+        display: flex;
+        align-items: center;
     }
     .react-calendar__navigation > .react-calendar__navigation__arrow:enabled, .react-calendar__navigation > .react-calendar__navigation__label {
         background: #62A3BE !important;
         font-size: 60px;
+        display: flex;
+        align-items: center;
+        margin: 0;
     }
     .react-calendar__navigation__label {
         display: flex;
@@ -132,6 +139,11 @@
         width: 100% !important;
     }
     .react-calendar__viewContainer {
-        margin-top: 50px !important;
+        margin-top: 30px !important;
+    }
+
+    .react-calendar__month-view > div > div > .react-calendar__month-view__weekdays {
+        background: #2c2c2c !important;
+        height: 20% !important;
     }
 }
