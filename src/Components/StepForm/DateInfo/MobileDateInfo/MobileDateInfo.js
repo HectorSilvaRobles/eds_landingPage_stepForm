@@ -12,8 +12,10 @@ export class MobileDateInfo extends Component {
             this.state = {
                 dateModal: false,
                 timeModal: false,
-                date: new Date(),
-                takenTimes: []
+                date: null,
+                takenTimes: [],
+                dateOfEstimate: null,
+                timeOfEstimate: null
             }
     }
 
@@ -77,7 +79,6 @@ export class MobileDateInfo extends Component {
 
     // Format calendar for mobile
     formatDate = (date, selected) => {
-        if(selected == 'MMMM YYYY'){
             let theMonths = {
                 1 : 'Jan',
                 2 : 'Feb',
@@ -97,20 +98,21 @@ export class MobileDateInfo extends Component {
             let monthName = theMonths[month]
             let dateOfEstimate = `${monthName} ${year}`
             return dateOfEstimate
-        } else if (selected == 'dd'){
-            let theWeekday = {
-                1 : 'S',
-                2 : 'M',
-                3 : 'T',
-                4 : 'W',
-                5 : 'T',
-                6 : 'F',
-                7 : 'S'
-            }
-            let weekday = date.getDay() + 1
-            let shortWeekday = theWeekday[weekday]
-            console.log(shortWeekday)
+    }
+
+    formatWeekday = (date, format) => {
+        let theWeekday = {
+            1 : 'S',
+            2 : 'M',
+            3 : 'T',
+            4 : 'W',
+            5 : 'T',
+            6 : 'F',
+            7 : 'S'
         }
+        // let weekday = date.getDay() + 1
+        // let shortWeekday = theWeekday[weekday]
+        console.log(theWeekday)
     }
 
     render() {
@@ -119,7 +121,7 @@ export class MobileDateInfo extends Component {
             <div className='dateInfo-mobile'>
                 <div className='dateInfo-mobile-header'>
                     <div className='dateInfo-mobile-header-div'>
-                        <h1></h1>
+                        <h1>{this.state.dateOfEstimate == null ? '-- -- ----' : this.state.dateOfEstimate}</h1>
                         <h2></h2>
                     </div>
                 </div>
@@ -147,10 +149,13 @@ export class MobileDateInfo extends Component {
                                     calendarType={"US"}
                                     minDetail={'month'}
                                     formatMonthYear={(locale, date) => this.formatDate(date, 'MMMM YYYY')}
-                                    formatShortWeekday={(local, date) => this.formatDate(date, 'dd')}
+                                    // formatShortWeekday={(local, date) => this.formatWeekday(date, 'dd')}
                                 />
                             </div>
-                            <div className='dateInfo-modal-div-button'></div>
+                            <div 
+                                className={this.state.dateOfEstimate == null ? 'dateInfo-modal-div-button-disabled' :'dateInfo-modal-div-button'}
+                                disabled={this.state.dateOfEstimate == null ? true : false}
+                            >Select</div>
                         </div>
                     </Modal>
                     <div 
