@@ -128,6 +128,7 @@ export class MobileDateInfo extends Component {
                 <div className='dateInfo-mobile-body'>
                     <div 
                         className='dateInfo-mobile-body-modal' 
+                        id={this.state.dateOfEstimate == null ? null : 'completed-modal-option'}
                         onClick={() => this.openModal('dateModal')}
                     >Date</div>
                     <Modal
@@ -155,12 +156,14 @@ export class MobileDateInfo extends Component {
                             <div 
                                 className={this.state.dateOfEstimate == null ? 'dateInfo-modal-div-button-disabled' :'dateInfo-modal-div-button'}
                                 disabled={this.state.dateOfEstimate == null ? true : false}
+                                onClick={() => this.setState({dateModal: false, timeModal: true})}
                             >Select</div>
                         </div>
                     </Modal>
                     <div 
-                        className='dateInfo-mobile-body-modal'
                         onClick={() => this.openModal('timeModal')}
+                        className={this.state.dateOfEstimate == null ? 'dateInfo-modal-button-disabled' :'dateInfo-mobile-body-modal'}
+                        disabled={this.state.dateOfEstimate == null ? true : false}
                     >Time</div>
                     <Modal
                         open={this.state.timeModal}
@@ -173,7 +176,23 @@ export class MobileDateInfo extends Component {
                                 <div className='dateInfo-modal-div-header-title'>Time</div>
                                 <div className='dateInfo-modal-div-header-spacer'><RiCloseCircleLine onClick={() => this.setState({timeModal: false})} /></div>
                             </div>
-                            <div className='dateInfo-modal-div-body'></div>
+                            <div className='dateInfo-modal-div-body'>
+                                <div className='dateInfo-modal-time-header'></div>
+                                <div className='dateInfo-modal-time-body'>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
                             <div className='dateInfo-modal-div-button'></div>
                         </div>
                         
