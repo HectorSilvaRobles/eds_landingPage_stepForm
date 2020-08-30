@@ -43,7 +43,7 @@
     justify-content: space-around;
 }
 
-.dateInfo-mobile-body-modal {
+.dateInfo-mobile-body-modal, .dateInfo-modal-button-disabled, #completed-modal-option {
     height: 30%;
     width: 90%;
     /* background: red; */
@@ -56,8 +56,20 @@
     font-weight: bold;
     color: #2c2c2c;
     font-size: 30px;
+    cursor: pointer;
 }
 
+.dateInfo-modal-button-disabled {
+    border: solid 5px rgb(201, 201, 201);
+    color: #bfbfbf;
+    background: rgb(235, 235, 235);
+    cursor: default;
+}
+
+#completed-modal-option {
+    background: #2c2c2c;
+    color: white;
+}
 .dateInfo-modal-div {
     width: 90%;
     border-radius: 10px;
@@ -101,7 +113,8 @@
 .dateInfo-modal-div-body {
     height: 500px;
     width: 100%;
-    background: orange;
+    display: flex;
+    flex-direction: column;;
 }
 .dateInfo-modal-div-button, .dateInfo-modal-div-button-disabled {
     height: 80px;
@@ -133,7 +146,24 @@
     overflow: scroll;
 }
 
+.dateInfo-modal-time-header {
+    height: 20%;
+    width: 100%;
+    background: #62A3BE;
+}
 
+.dateInfo-modal-time-body {
+    height: 80%;
+    width: 100%;
+    background: red;
+}
+
+.dateInfo-modal-time-body > div {
+    
+}
+
+
+/* React Calendar styling */
 @media screen and (max-width: 900px){
     .react-calendar__navigation {
         height: 100px !important;
