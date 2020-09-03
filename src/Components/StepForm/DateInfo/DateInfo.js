@@ -34,7 +34,7 @@ export class DateInfo extends Component {
                         </div>
                         <div className='dateInfo-stepformdots-body'>
                             <RegularDateInfo className='dateInfo-regular' values={this.props.values} handleChange={this.props.handleChange} />
-                            <MobileDateInfo className='dateInfo-mobile' />
+                            <MobileDateInfo className='dateInfo-mobile' values={this.props.values} handleChange={this.props.handleChange} />
                         </div>
                         <div className='dateInfo-buttons'>
                             <button className='dateInfo-buttons-back' onClick={this.back}>Back</button>

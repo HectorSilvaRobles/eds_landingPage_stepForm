@@ -14,8 +14,8 @@ export class MobileDateInfo extends Component {
                 timeModal: false,
                 date: null,
                 takenTimes: [],
-                dateOfEstimate: null,
-                timeOfEstimate: null
+                dateOfEstimate: this.props.values.date_of_estimate ? this.props.values.date_of_estimate : null,
+                timeOfEstimate: this.props.values.time_of_estimate ? this.props.values.time_of_estimate : null
             }
     }
 
@@ -63,18 +63,18 @@ export class MobileDateInfo extends Component {
 
         this.setState({dateOfEstimate, date, timeOfEstimate: null})
 
-        // // Set date in parent state
-        // this.props.handleChange([
-        //     {
-        //         "type" : "date_of_estimate",
-        //         "value" : dateOfEstimate
-        //     }
-        //     , 
-        //     {
-        //         "type" : "time_of_estimate",
-        //         "value" : null
-        //     }
-        // ])
+        // Set date in parent state
+        this.props.handleChange([
+            {
+                "type" : "date_of_estimate",
+                "value" : dateOfEstimate
+            }
+            , 
+            {
+                "type" : "time_of_estimate",
+                "value" : null
+            }
+        ])
     }
 
     // Format calendar for mobile
@@ -100,19 +100,25 @@ export class MobileDateInfo extends Component {
             return dateOfEstimate
     }
 
-    formatWeekday = (date, format) => {
-        let theWeekday = {
-            1 : 'S',
-            2 : 'M',
-            3 : 'T',
-            4 : 'W',
-            5 : 'T',
-            6 : 'F',
-            7 : 'S'
-        }
-        // let weekday = date.getDay() + 1
-        // let shortWeekday = theWeekday[weekday]
-        console.log(theWeekday)
+    // update new time selection in state 
+    timeOfEstimateOnChange = (time) => {
+        this.setState({timeOfEstimate: time})
+        // Set time in parent state
+        this.props.handleChange([
+            {
+                "type" : "time_of_estimate",
+                "value" : time
+            }
+        ])
+    }
+
+
+    // format time in mobile header 
+    formatTime = () => {
+        let timesplit = this.state.timeOfEstimate.split(' ')
+        timesplit[0] = timesplit[0] + ':00'
+        timesplit = timesplit.join(' ')
+        return timesplit
     }
 
     render() {
@@ -122,7 +128,7 @@ export class MobileDateInfo extends Component {
                 <div className='dateInfo-mobile-header'>
                     <div className='dateInfo-mobile-header-div'>
                         <h1>{this.state.dateOfEstimate == null ? '-- -- ----' : this.state.dateOfEstimate}</h1>
-                        <h2></h2>
+                        <h1>{this.state.timeOfEstimate == null ? '---- --' : this.formatTime()}</h1>
                     </div>
                 </div>
                 <div className='dateInfo-mobile-body'>
@@ -153,11 +159,11 @@ export class MobileDateInfo extends Component {
                                     // formatShortWeekday={(local, date) => this.formatWeekday(date, 'dd')}
                                 />
                             </div>
-                            <div 
-                                className={this.state.dateOfEstimate == null ? 'dateInfo-modal-div-button-disabled' :'dateInfo-modal-div-button'}
-                                disabled={this.state.dateOfEstimate == null ? true : false}
+                            <button
+                                className={this.state.dateOfEstimate === null ? 'dateInfo-modal-div-button-disabled' :'dateInfo-modal-div-button'}
+                                disabled={this.state.dateOfEstimate === null ? true : false}
                                 onClick={() => this.setState({dateModal: false, timeModal: true})}
-                            >Select</div>
+                            >Select</button>
                         </div>
                     </Modal>
                     <div 
@@ -177,23 +183,83 @@ export class MobileDateInfo extends Component {
                                 <div className='dateInfo-modal-div-header-spacer'><RiCloseCircleLine onClick={() => this.setState({timeModal: false})} /></div>
                             </div>
                             <div className='dateInfo-modal-div-body'>
-                                <div className='dateInfo-modal-time-header'></div>
+                                <div className='dateInfo-modal-time-header'>{this.state.timeOfEstimate ? this.state.timeOfEstimate : '-- --'}</div>
                                 <div className='dateInfo-modal-time-body'>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
+                                    <div
+                                        id={this.state.takenTimes.includes('7 AM') ? 'time-option-taken-mobile' : null}
+                                        disabled={this.state.takenTimes.includes('7 AM') ? true : false}
+                                        className={this.state.timeOfEstimate === '7 AM' ? 'time-option-active-mobile' : null}
+                                        onClick={() => this.timeOfEstimateOnChange('7 AM')}
+                                    >7 AM</div>
+                                    <div
+                                        id={this.state.takenTimes.includes('8 AM') ? 'time-option-taken-mobile' : null}
+                                        disabled={this.state.takenTimes.includes('8 AM') ? true : false}
+                                        className={this.state.timeOfEstimate === '8 AM' ? 'time-option-active-mobile' : null}
+                                        onClick={() => this.timeOfEstimateOnChange('8 AM')}
+                                    >8 AM</div>
+                                    <div
+                                        id={this.state.takenTimes.includes('9 AM') ? 'time-option-taken-mobile' : null}
+                                        disabled={this.state.takenTimes.includes('9 AM') ? true : false}
+                                        className={this.state.timeOfEstimate === '9 AM' ? 'time-option-active-mobile' : null}
+                                        onClick={() => this.timeOfEstimateOnChange('9 AM')}
+                                    >9 AM</div>
+                                    <div
+                                        id={this.state.takenTimes.includes('10 AM') ? 'time-option-taken-mobile' : null}
+                                        disabled={this.state.takenTimes.includes('10 AM') ? true : false}
+                                        className={this.state.timeOfEstimate === '10 AM' ? 'time-option-active-mobile' : null}
+                                        onClick={() => this.timeOfEstimateOnChange('10 AM')}
+                                    >10 AM</div>
+                                    <div
+                                        id={this.state.takenTimes.includes('11 AM') ? 'time-option-taken-mobile' : null}
+                                        disabled={this.state.takenTimes.includes('11 AM') ? true : false}
+                                        className={this.state.timeOfEstimate === '11 AM' ? 'time-option-active-mobile' : null}
+                                        onClick={() => this.timeOfEstimateOnChange('11 AM')}
+                                    >11 AM</div>
+                                    <div
+                                        id={this.state.takenTimes.includes('12 PM') ? 'time-option-taken-mobile' : null}
+                                        disabled={this.state.takenTimes.includes('12 PM') ? true : false}
+                                        className={this.state.timeOfEstimate === '12 PM' ? 'time-option-active-mobile' : null}
+                                        onClick={() => this.timeOfEstimateOnChange('12 PM')}
+                                    >12 PM</div>
+                                    <div
+                                        id={this.state.takenTimes.includes('1 PM') ? 'time-option-taken-mobile' : null}
+                                        disabled={this.state.takenTimes.includes('1 PM') ? true : false}
+                                        className={this.state.timeOfEstimate === '1 PM' ? 'time-option-active-mobile' : null}
+                                        onClick={() => this.timeOfEstimateOnChange('1 PM')}
+                                    >1 PM</div>
+                                    <div
+                                        id={this.state.takenTimes.includes('2 PM') ? 'time-option-taken-mobile' : null}
+                                        disabled={this.state.takenTimes.includes('2 PM') ? true : false}
+                                        className={this.state.timeOfEstimate === '2 PM' ? 'time-option-active-mobile' : null}
+                                        onClick={() => this.timeOfEstimateOnChange('2 PM')}
+                                    >2 PM</div>
+                                    <div
+                                        id={this.state.takenTimes.includes('3 PM') ? 'time-option-taken-mobile' : null}
+                                        disabled={this.state.takenTimes.includes('3 PM') ? true : false}
+                                        className={this.state.timeOfEstimate === '3 PM' ? 'time-option-active-mobile' : null}
+                                        onClick={() => this.timeOfEstimateOnChange('3 PM')}
+                                    >3 PM</div>
+                                    <div
+                                        id={this.state.takenTimes.includes('4 PM') ? 'time-option-taken-mobile' : null}
+                                        disabled={this.state.takenTimes.includes('4 PM') ? true : false}
+                                        className={this.state.timeOfEstimate === '4 PM' ? 'time-option-active-mobile' : null}
+                                        onClick={() => this.timeOfEstimateOnChange('4 PM')}
+                                    >4 PM</div>
+                                    <div
+                                        id={this.state.takenTimes.includes('5 PM') ? 'time-option-taken-mobile' : null}
+                                        disabled={this.state.takenTimes.includes('5 PM') ? true : false}
+                                        className={this.state.timeOfEstimate === '5 PM' ? 'time-option-active-mobile' : null}
+                                        onClick={() => this.timeOfEstimateOnChange('5 PM')}
+                                    >5 PM</div>
+                                    <div
+                                        id={this.state.takenTimes.includes('6 PM') ? 'time-option-taken-mobile' : null}
+                                        disabled={this.state.takenTimes.includes('6 PM') ? true : false}
+                                        className={this.state.timeOfEstimate === '6 PM' ? 'time-option-active-mobile' : null}
+                                        onClick={() => this.timeOfEstimateOnChange('6 PM')}
+                                    >6 PM</div>
                                 </div>
                             </div>
-                            <div className='dateInfo-modal-div-button'></div>
+                            <div className='dateInfo-modal-div-button'>Select</div>
                         </div>
                         
                     </Modal>
