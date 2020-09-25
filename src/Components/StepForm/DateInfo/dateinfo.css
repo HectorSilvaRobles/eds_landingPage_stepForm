@@ -17,6 +17,7 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
 }
 .dateInfo-title > h1 {
     font-size: calc(40px + (50 - 40) * ((100vw - 300px) / (1900 - 300)));
@@ -63,7 +64,7 @@
 }
 
 .dateInfo-buttons {
-    height: 85px;
+    height: 72px;
     width: 100%;
     border: none;
     display: flex;
@@ -73,7 +74,7 @@
 
 .dateInfo-buttons-back {
     height: 100%;
-    width: 25%;
+    width: 35%;
     border: none;
     cursor: pointer;
     background: #454545;
@@ -84,7 +85,7 @@
 
 .dateInfo-buttons-next {
     height: 100%;
-    width: 75%;
+    width: 65%;
     border: none;
     color: white;
     text-transform: uppercase;

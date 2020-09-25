@@ -191,6 +191,12 @@
     border: solid 5px #62A3BE !important;
 }
 
+#time-option-taken-mobile {
+    border: solid 5px #cecece;
+    color: #cecece;
+    pointer-events: none;;
+}
+
 
 /* React Calendar styling */
 @media screen and (max-width: 900px){
@@ -203,7 +209,7 @@
         align-items: center;
     }
     .react-calendar__navigation > .react-calendar__navigation__arrow:enabled {
-        width: 15% !important;
+        /* width: 15% !important; */
         display: flex;
         align-items: center;
     }
@@ -235,5 +241,16 @@
     }
     .react-calendar__month-view > div > div > .react-calendar__month-view__days {
         height: 120% !important;
+    }
+
+    .react-calendar__navigation > .react-calendar__navigation__arrow {
+        background: #62A3BE !important;
+        font-size: 60px;
+        width: 15%;
+    }
+    .react-calendar__navigation > .react-calendar__navigation__arrow:hover {
+        background: #62A3BE !important;
+        font-size: 60px;
+        width: 15%;
     }
 }
