@@ -198,6 +198,7 @@
     font-size: calc(30px + (35 - 30) * ((100vw - 300px) / (1900 - 300)));
     background: #62A3BE;
     cursor: pointer;;
+    
 }
 .stepform-next-button-disabled {
     background: rgb(201, 201, 201);
