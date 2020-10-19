@@ -267,8 +267,11 @@
     color: #bfbfbf !important;
 }
 
-.react-calendar__month-view__days__day--weekend > abbr {
-    color: #454545 ;
+.react-calendar__month-view__days__day--weekend{
+    color: black !important ;
+}
+.react-calendar__month-view__days > button:disabled {
+    color:  rgb(170, 170, 170) !important;
 }
 
 .react-calendar__tile--now {

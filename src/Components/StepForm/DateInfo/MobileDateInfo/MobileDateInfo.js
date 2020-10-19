@@ -156,6 +156,7 @@ export class MobileDateInfo extends Component {
                                     calendarType={"US"}
                                     minDetail={'month'}
                                     formatMonthYear={(locale, date) => this.formatDate(date, 'MMMM YYYY')}
+                                    minDate={new Date()}
                                     // formatShortWeekday={(local, date) => this.formatWeekday(date, 'dd')}
                                 />
                             </div>
@@ -259,7 +260,11 @@ export class MobileDateInfo extends Component {
                                     >6 PM</div>
                                 </div>
                             </div>
-                            <div className='dateInfo-modal-div-button'>Select</div>
+                            <button 
+                                className={this.state.timeOfEstimate === null ? 'dateInfo-modal-div-button-disabled' :'dateInfo-modal-div-button'}
+                                disabled={this.state.timeOfEstimate === null ? true : false}
+                                onClick={() => this.setState({dateModal: false, timeModal: false})}
+                            >Select</button>
                         </div>
                         
                     </Modal>
