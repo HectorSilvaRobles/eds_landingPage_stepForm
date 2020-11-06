@@ -3,21 +3,40 @@ import Slider from 'react-slick';
 import axios from 'axios'
 import Modal from '@material-ui/core/Modal'
 import Backdrop from '@material-ui/core/Backdrop'
-import Popover from '@material-ui/core/Popover';
+import Popover from '@material-ui/core/Popover'
+import {Carousel} from 'react-bootstrap'
+
 import './portfolio.css'
 
 const Portfolio = () => {
     const settings = {
-        dots: false,
+        dots: true,
         arrows: false,
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
-        autoplay: true,
-        speed: 5000,
+        // autoplay: true,
+        speed: 1000,
         cssEase: "linear",
         className: 'ourWork-slider',
-        autoPlaySpeed: 1000
+        autoPlaySpeed: 1000,
+        responsive: [
+            {
+              breakpoint: 1100,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+              }
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                initialSlide: 1
+              }
+            }
+          ]
     }
 
 
@@ -31,26 +50,61 @@ const Portfolio = () => {
     },[])
 
 
-    // Popover for project colors
-    const [anchorEl, setAnchorEl] = useState(null)
-    const handlePopoverOpen = (event) => setAnchorEl(event.currentTarget)
-    const handlePopoverClose = () => setAnchorEl(null)
-    const popoverOpen = Boolean(anchorEl)
+    // before and after tab
+    let [tabState, setTabState] = useState('after')
 
+
+    // popover
+    const [anchorEl, setAnchorEl] = useState(null)
+    const handleclick = (event) => {
+        setAnchorEl(event.currentTarget);
+    }
+    const handleclose = () => {
+        setAnchorEl(null)
+    }
+    const popoveropen = Boolean(anchorEl)
+   
 
     // Modal for specific project
     const [open, setOpen] = useState(false)
     const handleOpen = () => {setOpen(true)}
     const handleClose = () => {setOpen(false)}
-
     const ModalOurWork = () => {
         return (
             <div className='ourwork-modal'>
-                <div className='ourwork-images'></div>
+                <div className='ourwork-images'>
+                    <Carousel>
+                    {
+                        targetWork && tabState === 'after' 
+                        ?
+                            targetWork.after_imgs.map(val => {
+                                return (
+                                    <Carousel.Item key={val}>
+                                        <img
+                                            className='carousel-img'
+                                            src={val}
+                                        />
+                                    </Carousel.Item>
+                                )
+                            })
+                        :
+                            targetWork.before_imgs.map(val => {
+                                return (
+                                    <Carousel.Item key={val}>
+                                        <img
+                                            className='carousel-img'
+                                            src={val}
+                                        />
+                                    </Carousel.Item>
+                                )
+                            })
+                    }
+                    </Carousel>
+                </div>
                 <div className='ourwork-body'>
                     <div className='ourwork-body-tabs'>
-                        <div className='ourwork-tab'>After</div>
-                        <div className='ourwork-tab'>Before</div>
+                        <div className='ourwork-tab' id={tabState ==='after' ? 'active-tab' : null} onClick={() => setTabState('after')}>After</div>
+                        <div className='ourwork-tab' id={tabState ==='before' ? 'active-tab' : null} onClick={() => setTabState('before')}>Before</div>
                     </div>
                     <div className='ourwork-body-info'>
                         <div className='ourwork-info-description'>
@@ -72,27 +126,8 @@ const Portfolio = () => {
                                                     <div key={val[1]}
                                                         className='color-square' 
                                                         style={{background: val[1]}}
-                                                        onMouseEnter={handlePopoverOpen}
-                                                        onMouseLeave={handlePopoverClose}
-                                                    >
-                                                        <Popover
-                                                            anchorEl={anchorEl}
-                                                            open={popoverOpen}
-                                                            className='project-color-popover'
-                                                            anchorOrigin={{
-                                                                vertical: 'bottom',
-                                                                horizontal: 'left',
-                                                            }}
-                                                            transformOrigin={{
-                                                                vertical: 'center',
-                                                                horizontal: 'center',
-                                                            }}
-                                                            onClose={handlePopoverClose}
-                                                            disableRestoreFocus
-                                                        >
-                                                            <h1>{val[0]}</h1>
-                                                        </Popover>
-                                                    </div>
+                                                        onClick={handleclick}
+                                                    />
                                                 )
                                             }) 
                                         :
@@ -112,7 +147,7 @@ const Portfolio = () => {
         <div className='portfolio'>
             <div className='portfolio-header'>
                 <h1>View Our Work</h1>
-                <h2>Take a look at our previous projects, see our results.</h2>
+                <h2>Take a look at our previous projects.</h2>
             </div>
             <div className='portfolio-body'>
                 <Slider {...settings}>
@@ -151,9 +186,17 @@ const Portfolio = () => {
                     BackdropProps={{
                         timeout: 500,
                     }}
+                    forwardRef={Modal}
                 >
                     {targetWork !== null ? ModalOurWork() : null}
                 </Modal>
+                <Popover
+                    open={popoveropen}
+                    anchorEl={anchorEl}
+                    onClose={handleclose}
+                >
+                    {targetWork !== null ? <h1>{targetWork}</h1> : null}
+                </Popover>
             </div>
         </div>
     )

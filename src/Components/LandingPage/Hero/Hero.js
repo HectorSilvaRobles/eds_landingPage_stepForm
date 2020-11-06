@@ -10,10 +10,13 @@ const Hero = () => {
             <img src={heroImage} alt='hero image' className='reghero' />
             <img src={heroImageMobile} alt='hero image' className='mobilehero' />
             <div className='hero-info'>
-                <div>
-                    <h1>Need A New Paint Job?</h1>
-                    <h2>Get a free estimate for your property today.</h2>
-                    <button>Schedule Now</button>
+                <div className='hero-info-words'>
+                    <h1>Arizona Paint & Coating Solutions</h1>
+                    <h2>We offer quality services for both home owners and businesses.</h2>
+                </div>
+                <div className='hero-info-buttons'>
+                        <button className='hero-quote-button' >Get Quote</button>
+                        <button className='hero-learn-button' >Learn More</button>
                 </div>
             </div>
         </div>
