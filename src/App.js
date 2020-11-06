@@ -4,6 +4,7 @@ import {Switch, Route} from 'react-router-dom'
 import Home from './Components/LandingPage/Home'
 import StepForm from './Components/StepForm/StepForm'
 import NavBar from './Components/NavBar/NavBar'
+import 'bootstrap/dist/css/bootstrap.min.css';
  
 function App() {
   return (

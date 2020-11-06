@@ -55,7 +55,7 @@
 }
 
 .ourwork-card {
-    height: 400px;
+    height: 380px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -64,22 +64,23 @@
 
 .ow-card {
     height: 90%;
-    width: 70%;
+    width: 75%;
     background: white;
     border-radius: 20px;
     overflow: hidden;
 }
 .ow-card-img {
-    height: 65%;
+    height: 70%;
     width: 100%;
     background: red;
     overflow: hidden;
 }
 .ow-card-img > img {
     width: 100%;
+    object-fit: cover;
 }
 .ow-card-button{
-    height: 35%;
+    height: 30%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -107,9 +108,8 @@
     align-items: center;
 }
 .ourwork-modal {
-    height: 650px;
-    width: 45%;
-    background: green;
+    height: 700px;
+    width: 50%;
     display: flex;
     flex-direction: column;
     border-radius: 20px;
@@ -117,13 +117,12 @@
 }
 .ourwork-images {
     width: 100%;
-    height: 50%;
-    background: red;
+    height: 60%;
 }
 
 .ourwork-body {
     width: 100%;
-    height: 50%;
+    height: 40%;
     background: white;
     display: flex;
     flex-direction: column;
@@ -136,7 +135,7 @@
     display: flex;
 }
 
-.ourwork-tab {
+.ourwork-tab, #active-tab {
     height: 100%;
     width: 50%;
     border: solid 8px #72b7d5;
@@ -145,7 +144,7 @@
     justify-content: center;
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: calc(30px + (40 - 30) * ((100vw - 1100px) / (1700 -1100)));
+    font-size: calc(30px + (40 - 30) * ((100vw - 1100px) / (1700 -1000)));
     cursor: pointer;
     font-weight: bold;
     color: #72b7d5;
@@ -171,17 +170,18 @@
 }
 .ourwork-info-description > h1 {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: calc(40px + (50 - 40) * ((100vw - 1100px) / (1700 -1100)));
+    font-size: calc(35px + (45 - 35) * ((100vw - 1100px) / (1700 -1000)));
     font-weight: bold;
-    color:#62A3BE;
+    color:#72b7d5;
 }
 
 .ourwork-info-description > p {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: calc(20px + (26 - 20) * ((100vw - 1100px) / (1700 -1100)));
+    font-size: calc(20px + (26 - 20) * ((100vw - 1100px) / (1700 -1000)));
     cursor: pointer;
     font-weight: 200;
     margin: 10px 0;
+    line-height: 1.2;
 }
 
 .ourwork-info-other {
@@ -200,15 +200,15 @@
 }
 .ourwork-info-other-1 > h1, .ourwork-info-other-2 > h1 {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: calc(40px + (45 - 40) * ((100vw - 1100px) / (1700 -1100)));
+    font-size: calc(35px + (45 - 35) * ((100vw - 1100px) / (1700 -1000)));
     font-weight: bold;
-    color:#62A3BE;
+    color:#72b7d5;
     margin-bottom: 10px;;
 }
 .ourwork-info-other-1 > p {
     font-family: Arial, Helvetica, sans-serif;
     text-transform: capitalize;;
-    font-size: calc(20px + (25 - 20) * ((100vw - 1100px) / (1700 -1100)));
+    font-size: calc(20px + (25 - 20) * ((100vw - 1100px) / (1700 -1000)));
 }
 
 .ourwork-paint {
@@ -224,8 +224,261 @@
     margin-right: 20px;
 }
 
-.project-color-popover {
-    background: red;
-    height: 20px;
-    width: 50px;
+.ourwork-images > div, .ourwork-images > div >div {
+    height: 100%;
+}
+.ourwork-images >div >div>div >img {
+    width: 100%;
+}
+
+#active-tab {
+    background: #72b7d5;
+    color: white;
+}
+
+
+@media screen and (max-width: 500px){
+    .ourwork-images >div >div>div >img {
+        height: 100%;
+        width: 130%;
+    }
+    .portfolio-header {
+        height: 15%;
+    }
+    .portfolio-header > h1 {
+        margin: 5px 0;
+        font-size: calc(35px + (30 - 35) * ((100vw - 300px) / (600 - 300)));
+    }
+    .portfolio-header > h2 {
+        font-size: calc(25px + (50 - 25) * ((100vw - 300px) / (1900 - 300)));
+        width: 90%;
+    }
+    .ow-card {
+        width: 90%;
+    }
+    .ow-card-img > img {
+        height: 100%;
+    }
+
+    
+}
+@media screen and (max-width: 601px) {
+    .ourwork-modal {
+        width: 95%;
+        height: 650px;
+    }
+    .ourwork-body-tabs {
+        height: 15%;
+    }
+    .ourwork-images {
+        height: 45%
+    }
+    .ourwork-body {
+        height: 55%;
+    }
+    .ourwork-tab {
+        border: 5px solid;
+    }
+    .ourwork-body-info {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .ourwork-info-description, .ourwork-info-other {
+        width: 95%;
+    }
+    .ourwork-info-description {
+        height: 45%;
+        align-items: center;
+    }
+    .ourwork-info-other {
+        height: 45%;
+    }
+    .ourwork-info-description > h1, .ourwork-info-description > p{
+        text-align: center;
+    }
+    .ourwork-info-description > h1, .ourwork-info-other-1 > h1,  .ourwork-info-other-2 > h1{
+        font-size: calc(25px + (35 - 25) * ((100vw - 300px) / (600 - 300)));
+        margin-bottom: 5px;
+    }
+    .ourwork-info-description > p, .ourwork-info-other-1 > p {
+        font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (600 - 300)));
+        width: 95%;
+        text-align : center;
+        margin: 0;
+    }
+    .ourwork-info-other-1, .ourwork-info-other-2 {
+        align-items: center;
+    }
+    .ourwork-paint {
+        justify-content: space-evenly;
+    }
+    .color-square {
+        height: 25px;
+        width: 25px;
+        margin: 0 5px;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px){
+    .ourwork-modal {
+        width: 85%;
+        height: 650px;
+    }
+    .ourwork-images {
+        height: 55%
+    }
+    .ourwork-body {
+        height: 45%;
+    }
+    .ourwork-info-description, .ourwork-info-other {
+        height: 80%;
+    }
+    .ourwork-info-description {
+        justify-content: flex-start;;
+    }
+    .ourwork-info-description > h1, .ourwork-info-other-1 > h1,  .ourwork-info-other-2 > h1{
+        font-size: calc(26px + (30 - 26) * ((100vw - 700px) / (900 - 700)));
+        margin: 0;
+    }
+    .ourwork-info-description > p, .ourwork-info-other-1 > p {
+        font-size: calc(18px + (20 - 18) * ((100vw - 700px) / (900 - 700)));
+        width: 95%;
+        margin: 5px 0;
+        line-height: 1.2;
+    }
+    .color-square {
+        margin: 5px 15px 0px 0px;
+        height: 25px;
+        width: 25px;
+    }
+    .ourwork-body-tabs {
+        height: 30%;
+    }
+    .ourwork-body-info {
+        height: 100%;
+    }
+    .ourwork-tab {
+        border: solid 5px #72b7d5;
+
+    }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1100px){
+    .ourwork-modal {
+        width: 75%;
+        height: 650px;
+    }
+    .ourwork-images {
+        height: 55%
+    }
+    .ourwork-body {
+        height: 45%;
+    }
+    .ourwork-tab {
+        border: solid 5px #72b7d5;
+    }
+    .ourwork-info-description {
+        height: 80%;
+        justify-content: flex-start;
+    }
+    .ourwork-info-description > p, .ourwork-info-other-1 > p {
+        font-size: calc(18px + (20 - 18) * ((100vw - 700px) / (900 - 700)));
+        width: 95%;
+        margin: 0;
+        line-height: 1.2;
+    }
+}
+
+
+
+@media screen and (max-width: 900px) and (min-width: 501px){
+    .portfolio {
+        height: 900px;
+    }
+    .portfolio-header {
+        height: 15%;
+    }
+    .portfolio-header > h1 {
+        font-size: calc(55px + (65 - 55) * ((100vw - 800px) / (800 - 501)));
+    }
+    .portfolio-header > h2 {
+        font-size: calc(30px + (40 - 30) * ((100vw - 800px) / (800 - 501)));
+    }
+    .ourwork-card {
+        height: 350px;
+    }
+    .ow-card {
+        width: 80%;
+    }
+    .ow-card-img > img {
+        height: 100%;
+    }
+    
+    
+}
+
+@media screen and (max-width: 1100px) and (min-width: 901px){
+    .portfolio {
+        height: 900px;
+    }
+    .portfolio-header > h1 {
+        font-size: calc(50px + (60 - 50) * ((100vw - 800px) / (1100 - 901)));
+    }
+    .portfolio-header > h2 {
+        font-size: calc(30px + (35 - 30) * ((100vw - 800px) / (1100 - 901)));
+    }
+    .ourwork-card {
+        height: 350px;
+    }
+}
+
+@media screen and (max-width: 1300px) and (min-width: 1101px){
+    .ow-card {
+        width: 80%;
+    }
+    .ourwork-card { 
+        height: 350px;
+    }
+}
+
+@media screen and (max-width: 2200px) and (max-height: 1200px) and (min-width: 1800px) and (min-height: 1000px) {
+    .portfolio {
+        height: 1300px;
+    }
+    .ourwork-card {
+        height: 550px;
+    }
+    .ow-card {
+        border-radius: 40px;
+    }
+    .ow-card-button > button{
+        height: 70%;
+        font-size: calc(30px + (35 - 30) * ((100vw - 1800px) / (2200 - 1800)));
+
+    }
+    .portfolio-header > h2 {
+        font-size: calc(45px + (60 - 45) * ((100vw - 1800px) / (2200 - 1800)));
+    }
+    .ourwork-modal {
+        height: 75%;
+    }
+    .ourwork-info-description > h1, .ourwork-info-other-1 > h1,  .ourwork-info-other-2 > h1{
+        font-size: calc(45px + (50 - 45) * ((100vw - 1800px) / (2200 - 1800)));
+    }
+    .ourwork-info-description > p, .ourwork-info-other-1 > p {
+        font-size: calc(24px + (30 - 24) * ((100vw - 1800px) / (2200 - 1800)));
+        width: 95%;
+    }
+}
+
+@media screen and (min-width: 2201px) and (min-height: 1201px) {
+    .portfolio {
+        height: 1800px;
+    }
+    .portfolio-body {
+        height: 50%;
+    }
+    .ourwork-card {
+        height: 650px;
+    }
 }
