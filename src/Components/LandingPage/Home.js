@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import Hero from './Hero/Hero'
+import Intro from './Intro/Intro'
 import Portfolio from './Portfolio/Portfolio'
 import Services from './Services/Services'
 import Testimonials from './Testimonials/Testimonials';
@@ -22,6 +23,7 @@ export class Home extends Component {
         return (
             <div>
                 <Hero />
+                <Intro />
                 <Portfolio />
                 <Services />
                 <Testimonials />

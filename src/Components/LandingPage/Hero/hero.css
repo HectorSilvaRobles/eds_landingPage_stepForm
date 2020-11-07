@@ -100,7 +100,7 @@
     }
 
     .hero-info {
-        height: 60%;
+        height: 500px;
         width: 100%;
     }
     .hero-info-words {
@@ -169,7 +169,7 @@
 
 @media screen and (max-width: 900px) and (min-width: 700px) {
     .hero {
-        height: 700px;
+        height: 650px;
     }
     .hero-info-words {
         width: 80%;
@@ -177,7 +177,7 @@
     }
 
     .hero-info {
-        height: 70%;
+        height: 550px;
     }
 
     .hero-info > div > h1 {
@@ -197,7 +197,7 @@
 
     .hero-info-buttons > button {
         font-size: 25px;
-        height: 80%;
+        height: 90%;
         width: 40%;
         margin: 0 20px;
     }
@@ -235,23 +235,69 @@
         font-size: calc(26px + (30 - 26) * ((100vw - 900px) / (1100 - 900)));
         width: 90%;
     }
-    
 }
 
-@media screen and (min-width: 1700px) and (min-height: 1000px ) and (max-width: 2000px) and (max-height: 1100px){
+
+@media screen and (max-width: 1450px) and (min-width: 1101px){
+    .hero-info-words {
+        height: 30%;
+    }
+    .hero-info > div > h1 {
+        font-size: calc(62px + (67 - 62) * ((100vw - 1100px) / (1450 - 1100)));
+    }
+    .hero-info > div > h2 {
+        font-size: calc(30px + (40 - 30) * ((100vw - 1100px) / (1450 - 1100)));
+        width: 90%;
+    }
+    .hero-info-buttons {
+        height: 13%;
+    }
+    .hero-info-buttons > button {
+        height: 80%;
+        font-size: 25px;
+    }
+}
+
+
+@media screen and (min-width: 1700px){
     .hero, .hero-info {
         height: 900px;
     }
-    .hero-info > div > button {
-        height :100px;
+    .hero-info > div > h1 {
+        font-size: calc(90px + (140 - 90) * ((100vw - 1700px) / (3000 - 1700)));
+    }
+    .hero-info > div > h2 {
+        font-size: calc(50px + (80 - 50) * ((100vw - 1700px) / (3000 - 1700)));
+        width: 90%;
+    }
+    .hero-info-words {
+        height: 40%;
+    }
+    
+}
+
+@media screen and (min-width: 2000px){
+    .hero, .hero-info {
+        height: 1100px
+    }
+    .hero-info-words {
+        height: 35%;
+    }
+    .hero-info-buttons {
+        height: 18%;
+    }
+    .hero-info-buttons > button {
+        font-size: 35px;
+        height: 70%;
     }
 }
 
-@media screen and (min-width: 2200px) and (min-height: 1200px ) and (max-width: 3000px) and (max-height: 1800px){
+@media screen and (min-width: 2400px){
     .hero, .hero-info {
-        height: 1200px;
+        height: 1200px
     }
-    .hero-info > div > button {
-        height :150px;
+
+    .hero-info-buttons > button {
+        font-size: 40px;
     }
 }
