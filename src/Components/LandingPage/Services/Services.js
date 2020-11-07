@@ -4,34 +4,26 @@ import painter from '../../../Assets/painter.jpg'
 import './services.css'
 
 const Services = () => {
-    const [type, setType] = useState('paint')
+    const [type, setType] = useState('interior')
 
     return (
         <div className='services'>
-            <div className='services-title'>
-                <h1>What We Do</h1>
-                <p>See how we can help in completing your project.</p>
-            </div>
-            <div className='services-body'>
-                <div className='service-card'>
-                    <div className='service-card-img'>
-                        <img src={type === 'paint' ? painter : drywall }/>
-                    </div>
-                    <div className='service-card-info'>
-                        <h1>{type === 'paint' ? 'Paint Service' : 'Drywall Service'}</h1>
-                        <p>{type === 'paint' ? 
-                        'Our painting experts help in providing our clients with a new fresh coat of paint for both interior and or exterior projects.' 
-                        : 
-                        'Our painting experts help in providing our clients with a new fresh coat of paint for both interior and or exterior projects.' }
-                        </p>
-                        <div className='service-card-info-buttons'>
-                            <button className={type=== 'paint' ? 'service-card-button-active' : 'service-card-button-inactive'} onClick={() => setType('paint')}>Paint</button>
-                            <button className={ type==='drywall' ? 'service-card-button-active' : 'service-card-button-inactive'} onClick={() => setType('drywall')}>Drywall</button>
-                        </div>
-                    </div>
+            <div className='services-info'>
+                <div className='services-info-words'>
+                    <h1>Services We Offer</h1>
+                    <h2>Choose the type of service that best suits your project needs.</h2>
+                </div>
+                <div className='services-info-buttons'>
+                    <button onClick={() => setType('interior')} className={type === 'interior' ? 'service-button-active' : null} >Interior</button>
+                    <button onClick={() => setType('exterior')} className={type === 'exterior' ? 'service-button-active' : null} >Exterior</button>
+                    <button onClick={() => setType('drywall')} className={type === 'drywall' ? 'service-button-active' : null} >Drywall</button>
                 </div>
             </div>
-
+            <div className='services-card'>
+                <div>
+                    
+                </div>
+            </div>
         </div>
     )
 }

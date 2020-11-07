@@ -24,8 +24,8 @@ export class Home extends Component {
             <div>
                 <Hero />
                 <Intro />
-                <Portfolio />
                 <Services />
+                <Portfolio />
                 <Testimonials />
                 <Benefits />
             </div>
