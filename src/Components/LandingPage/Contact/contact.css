@@ -1,0 +1,267 @@
+.contact {
+    height: 700px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-title {
+    height: 70%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-title > h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: calc(75px + (80 - 75) * ((100vw - 1450px) / (1800 - 1450)));
+    font-weight: bold;
+    cursor: default;
+    color: #192D5A;
+    line-height: 1;
+    margin: 5px 0;
+}
+
+.contact-title > h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: calc(36px + (42 - 36) * ((100vw - 1450px) / (1800 - 1450)));
+    line-height: 1.1;
+    text-align: start;
+    cursor: default;
+    color: #707070;
+    width: 90%;
+}
+
+.contact-title > button {
+    height: 90px;
+    width: 35%;
+    border: none;
+    margin-top: 15px;
+    border-radius: 1000px;
+    font-size: 25px;
+    font-weight: bold;
+    background: linear-gradient(0.25turn, #E16D41, #FFB100);
+    color: white;
+}
+
+.contact-info {
+    height: 60%;
+    width: 40%;
+    /* background: green; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.contact-info > div {
+    width: 75%;
+    height: 45%;
+    /* background: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-info > div > h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: calc(55px + (60 - 55) * ((100vw - 1450px) / (1800 - 1450)));
+    font-weight: bold;
+    cursor: default;
+    color: #E16D41;
+    line-height: 1;
+    margin: 5px 0;
+}
+
+.contact-info > div > h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: calc(35px + (40 - 35) * ((100vw - 1450px) / (1800 - 1450)));
+    font-weight: bold;
+    cursor: default;
+    color: #192D5A;
+    line-height: 1;
+    margin: 5px 0;
+}
+
+
+@media screen and (max-width: 900px){
+    .contact {
+        flex-direction: column;
+        height: 750px;
+    }
+    .contact-title {
+        width: 90%;
+        height: 30%;
+        align-items: center;
+    }
+
+    .contact-title > h1 {
+        text-align: center;
+        font-size: calc(35px + (45 - 35) * ((100vw - 300px) / (600 - 300)));
+    }
+
+    .contact-title > h2 {
+        text-align: center;
+        width: 90%;
+        font-size: calc(20px + (28 - 20) * ((100vw - 300px) / (600 - 300)));
+    }
+
+    .contact-title > button {
+        height: 65px;
+        width: 60%;
+        margin-top: 5px;
+        font-size: 22px;
+    }
+
+    .contact-info {
+        margin-top: 10px;
+        width: 90%;
+        height: 50%;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .contact-info > div {
+        align-items: center;
+    }
+
+    .contact-info > div > h1 {
+        text-align: center;
+        font-size: calc(35px + (45 - 35) * ((100vw - 300px) / (600 - 300)));
+    }
+
+    .contact-info > div > h2 {
+        margin: 10px 0;
+        text-align: center;
+        font-size: calc(20px + (30 - 20) * ((100vw - 300px) / (600 - 300)));
+    }
+
+    .contact-title > button {
+        width: 60%;
+        height: 65px;
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 700px) and (min-width: 501px) {
+    .contact {
+        height: 800px;
+    }
+    .contact-title > h2 {
+        width: 100%;
+    }
+    .contact-title > button {
+        width: 50%;
+        height: 70px;
+        font-size: 25px;
+    }
+}
+
+
+@media screen and (max-width: 900px) and (min-width: 701px){
+    .contact {
+        height: 700px;
+    }
+
+    .contact-title > h1 {
+        font-size: calc(40px + (45 - 40) * ((100vw - 700px) / (900 - 700)));
+    }
+    .contact-title > h2 {
+        width: 75%;
+        font-size: calc(24px + (30 - 24) * ((100vw - 700px) / (900 - 700)));
+    }
+
+    .contact-title > button {
+        width: 30%;
+        height: 70px;
+        font-size: 25px;
+    }
+
+    .contact-info {
+        height: 30%;
+        flex-direction: row;
+    }
+    .contact-info > div > h1 {
+        font-size: calc(40px + (45 - 40) * ((100vw - 700px) / (900 - 700)));
+    }
+
+    .contact-info > div > h2 {
+        font-size: calc(24px + (30 - 24) * ((100vw - 700px) / (900 - 700)));
+    }
+
+}
+
+
+@media screen and (max-width: 1100px) and (min-width: 901px) {
+    .contact-title {
+        width: 50%;
+    }
+    .contact-title > h1 {
+        font-size: calc(45px + (50 - 45) * ((100vw - 900px) / (1100 - 901)));
+    }
+    .contact-title > h2 {
+        width: 85%;
+        font-size: calc(24px + (30 - 24) * ((100vw - 900px) / (1100 - 901)));
+    }
+    .contact-title > button {
+        font-size: 24px;
+        height: 70px;
+        width: 40%;
+        margin-top: 5px;
+    }
+
+    .contact-info > div {
+        width: 85%;
+    }
+
+    .contact-info {
+        height: 50%;
+    }
+
+    .contact-info >div > h1 {
+        font-size: calc(35px + (40 - 35) * ((100vw - 900px) / (1100 - 901)));
+
+    }
+}
+
+
+@media screen and (max-width: 1400px) and (min-width: 1101px) {
+    .contact-title {
+        width: 45%;
+    }
+    .contact-title > h1 {
+        font-size: calc(55px + (60 - 55) * ((100vw - 1100px) / (1450 - 1101)));
+    }
+
+    .contact-title > h2 {
+        font-size: calc(30px + (35 - 30) * ((100vw - 1100px) / (1450 - 1101)));
+    }
+    .contact-title > button {
+        width: 45%;
+        height: 80px;
+    }
+}
+
+
+@media screen and (min-width: 1700px){
+    .contact {
+        height: 800px;
+    }
+    .contact-title > button {
+        font-size: 35px;
+        height: 100px;
+        width: 40%;
+    }
+}
+
+@media screen and (min-width: 2150px){
+    .contact {
+        height: 900px;
+    }
+    .contact-title > button {
+        height: 110px;
+        font-size: 40px;
+    }
+}

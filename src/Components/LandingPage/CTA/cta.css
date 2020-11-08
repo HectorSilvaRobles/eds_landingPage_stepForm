@@ -77,7 +77,7 @@
     }
 }
 
-@media screen and (max-width: 700px) and (min-width: 500px) {
+@media screen and (max-width: 700px) and (min-width: 501px) {
     .cta {
         height: 400px;
     }
@@ -107,7 +107,7 @@
 }
 
 
-@media screen and (max-width: 1100px) and (min-width: 900px) {
+@media screen and (max-width: 1100px) and (min-width: 901px) {
     .cta {
         height: 280px;
     }
@@ -121,7 +121,7 @@
 }
 
 
-@media screen and (max-width: 1450px) and (min-width: 1100px){
+@media screen and (max-width: 1450px) and (min-width: 1101px){
     .cta-words {
         width: 50%;
     }
