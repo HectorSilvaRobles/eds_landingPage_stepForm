@@ -1,0 +1,162 @@
+.cta {
+    height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(0.25turn, #E16D41, #FFB100);
+}
+
+.cta-words {
+    height: 80%;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cta-words > h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: calc(70px + (80 - 70) * ((100vw - 1450px) / (1800 - 1450)));
+    font-weight: bold;
+    cursor: default;
+    color: white;
+    line-height: 1;
+    margin: 5px 0;
+}
+
+.cta-button {
+    height: 70%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cta-button > button {
+    height: 60%;
+    width: 80%;
+    background: #192D5A;
+    border-radius: 1000px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.cta-button > button:focus {
+    outline: none;
+}
+
+
+
+@media screen and (max-width: 900px) {
+    .cta {
+        flex-direction: column;
+        height: 350px;
+    }
+
+    .cta-words {
+        height: 30%;
+        width: 90%;
+        text-align: center;
+    }
+
+    .cta-words > h1 {
+        font-size: calc(32px + (50 - 32) * ((100vw - 300px) / (600 - 300)));
+    }
+
+    .cta-button {
+        height: 30%;
+        width: 90%;
+    }
+
+    .cta-button > button {
+        height: 80%;
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 700px) and (min-width: 500px) {
+    .cta {
+        height: 400px;
+    }
+    .cta-words, .cta-button {
+        width: 75%;
+    }
+    .cta-words {
+        height: 35%;
+    }
+
+    .cta-button > button {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 900px) and (min-width: 701px){
+    .cta-words {
+        height: 40%;
+    }
+    .cta-words > h1 {
+        font-size: calc(50px + (60 - 50) * ((100vw - 700px) / (900 - 700)));
+    }
+
+    .cta-button {
+        width: 50%;
+    }
+}
+
+
+@media screen and (max-width: 1100px) and (min-width: 900px) {
+    .cta {
+        height: 280px;
+    }
+    .cta-words {
+        width: 50%;
+    }
+    .cta-button {
+        width: 40%;
+        height: 60%;
+    }
+}
+
+
+@media screen and (max-width: 1450px) and (min-width: 1100px){
+    .cta-words {
+        width: 50%;
+    }
+    .cta-button {
+        width: 35%;
+        height: 65%;
+    }
+}
+
+
+@media screen and (min-width: 1700px){
+    .cta {
+        height: 350px;
+    }
+
+    .cta-words > h1 {
+        font-size: calc(80px + (120 - 80) * ((100vw - 1700px) / (3000 - 1700)));
+    }
+
+    .cta-button {
+        width: 25%;
+    }
+    .cta-button > button {
+        font-size: 45px;
+        height: 70%;
+        width: 100%;
+    }
+}
+
+
+@media screen and (min-width: 2200px){
+    .cta {
+        height: 420px;
+    }
+    .cta-button > button {
+        font-size: 60px
+    }
+}

@@ -6,6 +6,7 @@ import Portfolio from './Portfolio/Portfolio'
 import Services from './Services/Services'
 import Testimonials from './Testimonials/Testimonials';
 import Benefits from './Benefits/Benefits'
+import CTA from './CTA/CTA'
 
 import './home.css'
 
@@ -27,6 +28,7 @@ export class Home extends Component {
                 <Services />
                 <Portfolio />
                 <Testimonials />
+                <CTA />
                 <Benefits />
             </div>
         )
