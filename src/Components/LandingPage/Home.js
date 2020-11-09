@@ -9,6 +9,7 @@ import Benefits from './Benefits/Benefits'
 import CTA from './CTA/CTA'
 import About from './About/About'
 import Contact from './Contact/Contact'
+import Footer from './Footer/Footer'
 import './home.css'
 
 
@@ -33,6 +34,7 @@ export class Home extends Component {
                 <About />
                 <Benefits />
                 <Contact />
+                <Footer />
             </div>
         )
     }

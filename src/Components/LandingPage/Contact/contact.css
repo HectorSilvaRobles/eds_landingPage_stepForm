@@ -166,7 +166,7 @@
     }
 
     .contact-title > h1 {
-        font-size: calc(40px + (45 - 40) * ((100vw - 700px) / (900 - 700)));
+        font-size: calc(45px + (50 - 45) * ((100vw - 700px) / (900 - 700)));
     }
     .contact-title > h2 {
         width: 75%;

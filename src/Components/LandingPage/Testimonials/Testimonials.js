@@ -15,17 +15,14 @@ const Testimonials = () => {
         verticalSwiping: true,
         arrows: false,
         autoplay: true,
-        speed: 2000,
+        speed: 3000,
         dots: false,
-        autoplaySpeed: 2000,
     }
     return (
         <div className='testimonials'>
             <div className='testimonials-div-info'>
-                <div>
-                    <h1>Our Customers Love What We Do</h1>
-                    <h2>See what people have to say about our work.</h2>
-                </div>
+                <h1>Our Clients Love What We Do</h1>
+                <h2>See what our previous clients have to say about our work.</h2>
             </div>
             <div className='testimonials-div-testimonials'>
                 <div>
