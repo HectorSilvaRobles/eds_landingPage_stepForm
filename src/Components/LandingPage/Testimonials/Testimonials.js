@@ -14,9 +14,19 @@ const Testimonials = () => {
         vertical: true,
         verticalSwiping: true,
         arrows: false,
-        autoplay: true,
-        speed: 3000,
+        autoplay: false,
+        speed: 3500,
         dots: false,
+        responsive: [
+            {
+                breakpoint: 901,
+                settings: {
+                    slidesToShow: 1,
+                    vertical : false,
+                    verticalSwiping: false,
+                }
+            }
+        ]
     }
     return (
         <div className='testimonials'>
