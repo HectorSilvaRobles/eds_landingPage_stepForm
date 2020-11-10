@@ -146,6 +146,7 @@
 
     .testimonial-slider {
         height: 200px;
+        justify-content: center;
     }
     .testimonial-slider > div {
         align-items: center;
@@ -310,7 +311,50 @@
 
 @media screen and (min-width: 1700px){
     .testimonials {
-        height: 950px;
+        height: 1000px;
+    }
+    .testimonial-slider {
+        height: 200px;
+    }
+    .testimonial-slider-info > h1 {
+        width: 90%;
+        margin: 0;
+        font-size: calc(25px + (40 - 25) * ((100vw - 1700px) / (3000 - 1700)));
+    }
+    .testimonial-slider-info > h2 {
+        font-size: calc(30px + (45 - 30) * ((100vw - 1700px) / (3000 - 1700)));
+    }
+
+    .testimonials-div-info {
+        width: 40%;
     }
 }
 
+
+@media screen and (min-width: 2100px) {
+    .testimonials {
+        height: 1200px;
+    }
+    .testimonial-slider {
+        height: 250px;
+        margin: 30px 0;
+    }
+    .testimonial-slider-icon {
+        font-size: 50px;
+    }
+
+    .testimonials-div-info > h1 {
+        width: 80%;
+    }
+}
+
+
+@media screen and (min-width: 2450px){
+    .testimonials {
+        height: 1400px;
+    }
+    .testimonial-slider {
+        height: 290px;
+        margin: 30px 0;
+    }
+}

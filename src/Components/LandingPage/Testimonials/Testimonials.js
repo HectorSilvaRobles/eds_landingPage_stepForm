@@ -14,7 +14,7 @@ const Testimonials = () => {
         vertical: true,
         verticalSwiping: true,
         arrows: false,
-        autoplay: false,
+        autoplay: true,
         speed: 3500,
         dots: false,
         responsive: [

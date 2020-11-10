@@ -10,16 +10,15 @@ import './portfolio.css'
 
 const Portfolio = () => {
     const settings = {
-        dots: true,
+        dots: false,
         arrows: false,
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
         // autoplay: true,
-        speed: 1000,
+        speed: 2000,
         cssEase: "linear",
         className: 'ourWork-slider',
-        autoPlaySpeed: 1000,
         responsive: [
             {
               breakpoint: 1100,
@@ -48,7 +47,6 @@ const Portfolio = () => {
         .then(res => setOurWorkData(res.data))
         .catch(err => console.log(err))
     },[])
-
 
     // before and after tab
     let [tabState, setTabState] = useState('after')
@@ -146,8 +144,8 @@ const Portfolio = () => {
     return (
         <div className='portfolio'>
             <div className='portfolio-header'>
-                <h1>View Our Work</h1>
-                <h2>Take a look at our previous projects.</h2>
+                <h1>Work We've Done</h1>
+                <h2>Check out the projects completed in the past by our team.</h2>
             </div>
             <div className='portfolio-body'>
                 <Slider {...settings}>
@@ -156,15 +154,18 @@ const Portfolio = () => {
                             return (
                                 <div key={val.id}>
                                     <div className='ourwork-card'>
-                                        <div className='ow-card'>
-                                            <div className='ow-card-img'>
-                                                <img src={val.after_imgs[0]}/>
-                                            </div>
-                                            <div className='ow-card-button'>
-                                                <button onClick={() => {
-                                                    handleOpen()
-                                                    setTargetWork(val)
-                                                }}>View More</button>
+                                        <div 
+                                            className='ow-card' 
+                                            style={{'background-image': `url(${val.after_imgs[0]})`}}
+                                        >
+                                            <div className='ow-card-background' >
+                                                <div className='ow-card-type'>{val.type_of_work.map((type, index) => <span> {type} {index !== val.type_of_work.length -1 ? ' | ': ''}</span> )}</div>
+                                                <div className='ow-card-button'>
+                                                    <button onClick={() => {
+                                                        handleOpen()
+                                                        setTargetWork(val)
+                                                    }}>View More</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
