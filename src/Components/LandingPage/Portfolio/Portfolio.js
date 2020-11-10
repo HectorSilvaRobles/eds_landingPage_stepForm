@@ -28,7 +28,7 @@ const Portfolio = () => {
               }
             },
             {
-              breakpoint: 600,
+              breakpoint: 900,
               settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1,
@@ -159,7 +159,9 @@ const Portfolio = () => {
                                             style={{'background-image': `url(${val.after_imgs[0]})`}}
                                         >
                                             <div className='ow-card-background' >
-                                                <div className='ow-card-type'>{val.type_of_work.map((type, index) => <span> {type} {index !== val.type_of_work.length -1 ? ' | ': ''}</span> )}</div>
+                                                <div className='ow-card-type'>
+                                                    {val.type_of_work.join(' | ')}
+                                                </div>
                                                 <div className='ow-card-button'>
                                                     <button onClick={() => {
                                                         handleOpen()
