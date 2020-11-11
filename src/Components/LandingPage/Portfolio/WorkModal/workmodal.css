@@ -206,17 +206,19 @@
     .workmodal-info-words-description {
         height: 40%;
         width: 90%;
+        justify-content: center;
+
     }
     .workmodal-info-words-description > h1, .workmodal-info-words-other > div > h1 {
         text-align: center;
-        font-size: calc(25px + (30 - 25) * ((100vw - 300px) / (600 - 300)));
+        font-size: calc(24px + (28 - 24) * ((100vw - 300px) / (600 - 300)));
     }
 
     .workmodal-info-words-description > p, .workmodal-info-words-other > div > p {
         width: 100%;
         text-align: center;
         margin: 0;
-        font-size: calc(17px + (22 - 17) * ((100vw - 300px) / (600 - 300)));
+        font-size: calc(17px + (20 - 17) * ((100vw - 300px) / (600 - 300)));
     }
 
     .workmodal-info-words-other {
@@ -225,6 +227,7 @@
     }
     .workmodal-info-words-other > div {
         width: 100%;
+        justify-content: center;
     }
     .color-square {
         height: 25px;
@@ -234,5 +237,125 @@
     .modal-other-2 > div {
         height: 30px;
         justify-content: center;
+    }
+    .carousel-img {
+        width: 130%;
+        object-position: center center;
+    }
+    .modal-exit-space {
+        width: 75%;
+    }
+}
+
+
+@media screen and (max-width: 700px) and (min-width: 500px) {
+    .workmodal {
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 701px) and (max-width: 900px) {
+    .workmodal {
+        width: 70%;
+    }
+    .workmodal-images {
+        height: 45%;
+    }
+
+    .workmodal-info{
+        height : 55%;
+    }
+    .workmodal-info-words-description > h1, .workmodal-info-words-other > div > h1 {
+        text-align: left;
+        font-size: calc(24px + (25 - 24) * ((100vw - 700px) / (900 - 700)));
+    }
+    .workmodal-info-words-description > p, .workmodal-info-words-other > div > p {
+        text-align: left;
+        font-size: calc(18px + (20 - 18) * ((100vw - 700px) / (900 - 700)));
+    }
+    .workmodal-info-tabs {
+        height: 17%;
+    }
+    .workmodal-info-words {
+        height: 83%;
+    }
+    .workmodal-info-tabs > button {
+        font-size: calc(20px + (24 - 20) * ((100vw - 700px) / (900 - 700)));
+    }
+
+    .workmodal-info-words-description, .workmodal-info-words-other {
+        width: 80%;
+    }
+    .modal-other-2 > div {
+        justify-content: flex-start;
+    }
+    .color-square {
+        margin: 0;
+        margin-right: 20px;
+    }
+    .workmodal-info-words-description, .workmodal-info-words-other > div {
+        justify-content: flex-start;
+    }
+}
+
+
+@media screen and (max-width: 1100px) and (min-width: 901px){
+    .workmodal {
+        width: 65%;
+        height: 650px;
+    }
+    .workmodal-info-words-description > p, .workmodal-info-words-other > div > p {
+        font-size: calc(18px + (20 - 18) * ((100vw - 900px) / (1100 - 901)));
+    }
+    .workmodal-info-tabs > button {
+        font-size: 24px;
+    }
+}
+
+
+@media screen and (max-width: 1450px) and (min-width: 1101px) {
+    .workmodal {
+        width: 55%;
+        height: 650px;
+    }
+    .workmodal-info-words-description > p, .workmodal-info-words-other > div > p {
+        font-size: calc(18px + (20 - 18) * ((100vw - 1100px) / (1450 - 1101)));
+    }
+    .workmodal-info-tabs > button {
+        font-size: calc(24px + (28 - 24) * ((100vw - 1100px) / (1450 - 1101)));
+        
+    }
+}
+
+@media screen and (min-width: 1700px){
+    .workmodal {
+        height: 850px;
+    }
+}
+
+@media screen and (min-width: 2000px){
+    .workmodal {
+        width: 45%;
+        height: 950px;
+    }
+
+    .modal-exit {
+        height: 100px;
+    }
+    .workmodal-info-tabs > button {
+        font-size: 40px;
+    }
+}
+
+@media screen and (min-width: 2400px) {
+    .workmodal {
+        height: 1100px;
+    }
+    .color-square {
+        height: 40px;
+        width: 40px;
+    }
+    .modal-other-2 > div {
+        height: 50px;
     }
 }
