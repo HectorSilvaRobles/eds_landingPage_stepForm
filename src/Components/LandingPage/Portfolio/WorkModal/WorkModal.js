@@ -13,6 +13,7 @@ export default class WorkModal extends Component {
     }
 
     render(){
+        console.log(this.props.selectedProj)
         return (
             <div className='workmodal'>
                 <div className='workmodal-images'>
@@ -54,7 +55,30 @@ export default class WorkModal extends Component {
                         <button onClick={() => this.setState({tabOption: 'after'})} className={this.state.tabOption === 'after' ? 'tab-active' : null} >After</button>
                         <button onClick={() => this.setState({tabOption: 'before'})} className={this.state.tabOption === 'before' ? 'tab-active' : null} >Before</button>
                     </div>
-                    <div className='workmodal-info-words'></div>
+                    <div className='workmodal-info-words'>
+                        <div className='workmodal-info-words-description'>
+                            <h1>Description</h1>
+                            <p>{this.props.selectedProj.description}</p>
+                        </div>
+                        <div className='workmodal-info-words-other'>
+                            <div className='modal-other-1'>
+                                <h1>Services</h1>
+                                <p>{this.props.selectedProj.type_of_work.join(', ')}</p>
+                            </div>
+                            <div className='modal-other-2'>
+                                <h1>Paint Color</h1>
+                                <div>{this.props.selectedProj.paint_used.map( val => {
+                                    return (
+                                        <div 
+                                        key={val[1]}
+                                        className='color-square'
+                                        style={{'background': val[1]}}
+                                        />
+                                    )
+                                })}</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         )

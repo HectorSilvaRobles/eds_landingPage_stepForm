@@ -47,84 +47,10 @@ const Portfolio = () => {
     },[])
 
 
-
     // Modal for specific project
     const [open, setOpen] = useState(false)
     const handleOpen = () => {setOpen(true)}
     const handleClose = () => {setOpen(false)}
-    // const ModalOurWork = () => {
-    //     return (
-    //         <div className='ourwork-modal'>
-    //             <div className='ourwork-images'>
-    //                 <Carousel>
-    //                 {
-    //                     targetWork && tabState === 'after' 
-    //                     ?
-    //                         targetWork.after_imgs.map(val => {
-    //                             return (
-    //                                 <Carousel.Item key={val}>
-    //                                     <img
-    //                                         className='carousel-img'
-    //                                         src={val}
-    //                                     />
-    //                                 </Carousel.Item>
-    //                             )
-    //                         })
-    //                     :
-    //                         targetWork.before_imgs.map(val => {
-    //                             return (
-    //                                 <Carousel.Item key={val}>
-    //                                     <img
-    //                                         className='carousel-img'
-    //                                         src={val}
-    //                                     />
-    //                                 </Carousel.Item>
-    //                             )
-    //                         })
-    //                 }
-    //                 </Carousel>
-    //             </div>
-    //             <div className='ourwork-body'>
-    //                 <div className='ourwork-body-tabs'>
-    //                     <div className='ourwork-tab' id={tabState ==='after' ? 'active-tab' : null} onClick={() => setTabState('after')}>After</div>
-    //                     <div className='ourwork-tab' id={tabState ==='before' ? 'active-tab' : null} onClick={() => setTabState('before')}>Before</div>
-    //                 </div>
-    //                 <div className='ourwork-body-info'>
-    //                     <div className='ourwork-info-description'>
-    //                         <h1>Description</h1>
-    //                         <p>Description of the project, this should be around 2-4 sentences. Advise users of what you did and how your work was worth the business. Keep it simple </p>
-    //                     </div>
-    //                     <div className='ourwork-info-other'>
-    //                         <div className='ourwork-info-other-1'>
-    //                             <h1>Service</h1>
-    //                             <p>{targetWork.type_of_work !== null ? targetWork.type_of_work.map(val => val + ' ') : null}</p>
-    //                         </div>
-    //                         <div className='ourwork-info-other-2'>
-    //                             <h1>Paint Used</h1>
-    //                             <div className='ourwork-paint'>
-    //                                 {
-    //                                     targetWork.paint_used ? 
-    //                                         targetWork.paint_used.map(val => {
-    //                                             return (
-    //                                                 <div key={val[1]}
-    //                                                     className='color-square' 
-    //                                                     style={{background: val[1]}}
-    //                                                     onClick={handleclick}
-    //                                                 />
-    //                                             )
-    //                                         }) 
-    //                                     :
-    //                                         null
-    //                                 }
-    //                             </div>
-    //                         </div>
-    //                     </div>
-    //                 </div>
-    //             </div>
-
-    //         </div>
-    //     )
-    // }
 
     return (
         <div className='portfolio'>

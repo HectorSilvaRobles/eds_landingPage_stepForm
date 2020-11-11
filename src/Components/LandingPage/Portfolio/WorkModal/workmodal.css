@@ -1,6 +1,6 @@
 .workmodal {
     height: 750px;
-    width: 45%;
+    width: 50%;
     border-radius: 30px;
     display: flex;
     flex-direction: column;
@@ -34,7 +34,7 @@
 }
 
 .workmodal-images {
-    height: 50%;
+    height: 55%;
     width: 100%;
     display: flex;
     position: relative;
@@ -56,9 +56,8 @@
 }
 
 .workmodal-info {
-    background: blue;
     width: 100%;
-    height: 50%;
+    height: 45%;
     display: flex;
     flex-direction: column;
 }
@@ -88,4 +87,152 @@
     background: white;
     width: 100%;
     height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.workmodal-info-words-description {
+    height: 70%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.workmodal-info-words-description > h1 {
+    font-weight: bold;
+    cursor: default;
+    color: #192D5A;
+    line-height: 1;
+    margin: 5px 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: calc(35px + (40 - 35) * ((100vw - 1450px) / (1800 - 1450)));
+}
+
+.workmodal-info-words-description > p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: calc(20px + (25 - 20) * ((100vw - 1450px) / (1800 - 1450)));
+    line-height: 1.1;
+    text-align: start;
+    cursor: default;
+    color: #707070;
+    width: 95%;
+}
+
+.workmodal-info-words-other {
+    height: 70%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.workmodal-info-words-other > div {
+    width: 90%;
+    height: 50%;
+}
+
+.modal-other-1 {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.workmodal-info-words-other > div > h1 {
+    font-weight: bold;
+    cursor: default;
+    color: #192D5A;
+    line-height: 1;
+    margin: 5px 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: calc(35px + (40 - 35) * ((100vw - 1450px) / (1800 - 1450)));
+}
+
+.workmodal-info-words-other > div > p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: calc(20px + (25 - 20) * ((100vw - 1450px) / (1800 - 1450)));
+    line-height: 1.1;
+    text-align: start;
+    cursor: default;
+    color: #707070;
+    text-transform: capitalize;
+}
+
+
+.modal-other-2 > div {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.color-square {
+    height: 30px;
+    width: 30px;
+    margin-right: 20px;
+    border: solid black 1px;
+}
+
+
+
+@media screen and (max-width: 900px){
+    .workmodal {
+        width: 95%;
+        height: 650px;
+    }
+
+    .workmodal-images {
+        height: 40%;
+    }
+
+    .workmodal-info{
+        height : 60%;
+    }
+
+    .workmodal-info-tabs {
+        height: 15%;
+    }
+    .workmodal-info-tabs > button {
+        font-size: calc(20px + (25 - 20) * ((100vw - 300px) / (600 - 300)));
+        border: solid 5px #E16D41;
+
+    }
+
+    .workmodal-info-words {
+        height: 85%;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .workmodal-info-words-description {
+        height: 40%;
+        width: 90%;
+    }
+    .workmodal-info-words-description > h1, .workmodal-info-words-other > div > h1 {
+        text-align: center;
+        font-size: calc(25px + (30 - 25) * ((100vw - 300px) / (600 - 300)));
+    }
+
+    .workmodal-info-words-description > p, .workmodal-info-words-other > div > p {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        font-size: calc(17px + (22 - 17) * ((100vw - 300px) / (600 - 300)));
+    }
+
+    .workmodal-info-words-other {
+        height: 45%;
+        width: 90%;
+    }
+    .workmodal-info-words-other > div {
+        width: 100%;
+    }
+    .color-square {
+        height: 25px;
+        width: 25px;
+        margin: 0 10px;
+    }
+    .modal-other-2 > div {
+        height: 30px;
+        justify-content: center;
+    }
 }
