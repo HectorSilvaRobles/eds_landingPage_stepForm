@@ -1,0 +1,91 @@
+.workmodal {
+    height: 750px;
+    width: 45%;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.modal-exit {
+    position: absolute;
+    height: 70px;
+    width: 100%;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+}
+.modal-exit-space {
+    width: 85%;
+    height: 100%;
+}
+.modal-exit-real {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-exit-real > svg {
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.workmodal-images {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+
+.carousel-inner {
+    height: 100%;
+}
+.carousel {
+    width: 100% !important;
+}
+
+.carousel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.workmodal-info {
+    background: blue;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.workmodal-info-tabs {
+    width: 100%;
+    height: 20%;
+    display: flex;
+}
+.workmodal-info-tabs > button, .tab-active {
+    width: 50%;
+    height: 100%;
+    background: white;
+    border: solid 7px #E16D41;
+    font-size: 30px;
+    font-weight: bold;
+    color: #E16D41
+}
+.tab-active {
+    background: #E16D41 !important;
+    color: white !important;
+}
+.workmodal-info-tabs > button:focus, .tab-active:focus {
+    outline: none;
+}
+.workmodal-info-words {
+    background: white;
+    width: 100%;
+    height: 80%;
+}
