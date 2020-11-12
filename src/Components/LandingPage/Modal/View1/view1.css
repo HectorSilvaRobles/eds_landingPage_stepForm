@@ -1,0 +1,131 @@
+.view1 {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.view-title {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.view-title > h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: calc(55px + (60 - 55) * ((100vw - 1450px) / (1800 - 1450)));
+    font-weight: bold;
+    cursor: default;
+    color: #192D5A;
+    line-height: 1;
+    margin: 5px 0;
+}
+.view-title > h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: calc(30px + (35 - 30) * ((100vw - 1450px) / (1800 - 1450)));
+    line-height: 1.1;
+    text-align: center;
+    cursor: default;
+    color: #707070;
+    width: 90%;
+}
+
+.view-content {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+
+.view1-content-body {
+    height: 80%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.view1-section1 {
+    height: 65%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;;
+    align-items: center;
+}
+
+.view1-section1 > div, .option1-active {
+    height: 90%;
+    width: 45%;
+    border: solid 5px #E16D41;
+    background: white;
+    cursor: pointer;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.view1-section1 > div > svg {
+    font-size: 120px;
+    color: #E16D41;
+}
+
+.view1-section1 > div  > h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: calc(30px + (35 - 30) * ((100vw - 1450px) / (1800 - 1450)));
+    font-weight: bold;
+    cursor: default;
+    color: #192D5A;
+    line-height: 1;
+    margin: 10px 0;
+}
+
+.option1-active {
+    background: #E16D41 !important;
+}
+.option1-active > h1, .option1-active > svg {
+    color: white !important;
+}
+
+.view1-section2 {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.view1-section2 > div, .option2-active {
+    height: 60%;
+    width: 30%;
+    background: white;
+    border-radius: 1000px;
+    cursor: pointer;
+    border: solid 5px #E16D41;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #192D5A;
+    font-size: calc(18px + (22 - 18) * ((100vw - 1450px) / (1800 - 1450)));
+}
+
+.option2-active {
+    background: #192D5A !important;
+    border: none !important;
+    color: white !important;
+}
+
+
+.view1-content-button {
+    background: blue;
+    height: 20%;
+    width: 100%;
+}

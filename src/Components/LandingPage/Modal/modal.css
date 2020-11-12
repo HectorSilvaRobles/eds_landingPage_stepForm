@@ -1,0 +1,69 @@
+.modal-backdrop{
+    width: 100%;
+    height: 100%;
+    background: none !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}  
+.modal-backdrop:focus{
+    outline: none;;
+}
+
+.modal-form {
+    height: 750px;
+    width: 45%;
+    background: white;
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-form-top {
+    height: 10%;
+    width: 100%;
+    display: flex;
+}
+
+.modal-form-top-space {
+    width: 20%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-form-top-space > svg {
+    font-size: 35px;
+    cursor: pointer;
+    color: #E16D41;
+}
+
+.modal-form-top-dots {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-form-top-dots > div {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: white;
+    border: solid 5px #E16D41;
+    cursor: pointer;
+    margin: 0 15px;
+}
+
+.modal-dot-active {
+    background: #E16D41 !important;
+}
+
+.modal-form-body {
+    height: 90%;
+    width: 100%;
+}
