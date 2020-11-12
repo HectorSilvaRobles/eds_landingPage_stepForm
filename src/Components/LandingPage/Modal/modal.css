@@ -1,0 +1,144 @@
+.modal-backdrop{
+    width: 100%;
+    height: 100%;
+    background: none !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}  
+.modal-backdrop:focus{
+    outline: none;;
+}
+
+.modal-form {
+    height: 750px;
+    width: 45%;
+    background: white;
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-form-top {
+    height: 10%;
+    width: 100%;
+    display: flex;
+}
+
+.modal-form-top-space {
+    width: 20%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-form-top-space > svg {
+    font-size: 35px;
+    cursor: pointer;
+    color: #E16D41;
+}
+
+.modal-form-top-dots {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-form-top-dots > div {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: white;
+    border: solid 5px #E16D41;
+    cursor: pointer;
+    margin: 0 15px;
+}
+
+.modal-dot-active {
+    background: #E16D41 !important;
+}
+
+.modal-form-body {
+    height: 90%;
+    width: 100%;
+}
+
+
+@media screen and (max-width: 900px){
+    .modal-form {
+        width: 95%;
+        height: 680px;
+    }
+    .modal-form-top-dots {
+        width: 50%;
+    }
+    .modal-form-top-space {
+        width: 25%;
+    }
+    .modal-form-top-dots > div {
+        height: 22px;
+        width: 22px;
+        margin: 10px;
+    }
+    .modal-form-top-space > svg {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 700px) and (min-width: 501px){
+    .modal-form {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 900px) and (min-width: 701px) {
+    .modal-form {
+        width: 80%;
+    }
+}
+
+
+@media screen and (max-width: 1100px) and (min-width: 901px) {
+    .modal-form {
+        width: 70%;
+        height: 660px;
+    }
+    .modal-form-top-dots > div {
+        height: 25px;
+        width: 25px;
+        margin: 0 10px;
+    }
+}
+
+
+@media screen and (max-width: 1450px) and (min-width: 1101px) {
+    .modal-form {
+        width: 60%;
+        height: 700px;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    .modal-form {
+        height: 900px;
+    }
+    .modal-form-top-dots > div {
+        height: 35px;
+        width: 35px;
+    }
+
+    .modal-form-top-space > svg {
+        font-size: 45px;
+    }
+}
+
+@media screen and (min-width: 2400px){
+    .modal-form {
+        height: 1000px;
+    }
+}
