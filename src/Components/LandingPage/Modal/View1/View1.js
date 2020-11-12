@@ -19,6 +19,7 @@ const View1 = (props) => {
         }
     }
 
+
     return (
         <div className='view1'>
             <div className='view-title'>
@@ -58,7 +59,16 @@ const View1 = (props) => {
                         >Drywall</div>
                     </div>
                 </div>
-                <div className='view1-content-button'></div>
+                <div className='view1-content-button'>
+                    <button
+                        disabled={serviceState.length === 0 || resOrCom === null ? true : false}
+                        className={serviceState.length === 0 || resOrCom === null ? null : 'modal-button-active'}
+                        onClick={() => {
+                            props.handleUpdate('selected', {'resOrCom': resOrCom, 'services' : serviceState})
+                            props.handleView('view2')
+                        }}
+                    >Continue</button>
+                </div>
             </div>
         </div>
     )
