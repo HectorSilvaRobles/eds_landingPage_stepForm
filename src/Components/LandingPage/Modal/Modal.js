@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import {IoMdClose} from 'react-icons/io'
 import {ImArrowLeft} from 'react-icons/im'
 import View1 from './View1/View1'
+import View2 from './View2/View2'
+import View3 from './View3/View3'
 import './modal.css'
 
 
@@ -51,9 +53,18 @@ export default class Modal extends Component {
                         null
                     }
                     {this.state.view === 'view2' ? 
-                        <div>
-                            View 2
-                        </div>
+                        <View2
+                            handleView={this.handleView}
+                            handleUpdate={this.handleUpdateForm}
+                         />
+                        :
+                        null
+                    }
+                    {this.state.view === 'view3' ? 
+                        <View3
+                            handleView={this.handleView}
+                            handleUpdate={this.handleUpdateForm}
+                         />
                         :
                         null
                     }
