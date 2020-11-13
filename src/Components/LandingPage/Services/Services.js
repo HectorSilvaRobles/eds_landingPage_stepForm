@@ -29,7 +29,7 @@ const Services = () => {
     const [type, setType] = useState(interiorType)
 
     return (
-        <div className='services'>
+        <div className='services' id='services'>
             <div className='services-info'>
                 <div className='services-info-words'>
                     <h1>Services We Offer</h1>

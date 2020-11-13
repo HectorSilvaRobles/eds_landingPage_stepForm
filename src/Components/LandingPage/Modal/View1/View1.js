@@ -5,10 +5,10 @@ import './view1.css'
 
 
 const View1 = (props) => {
-    const [resOrCom, setResOrCom] = useState(null)
+    const [resOrCom, setResOrCom] = useState(props.state.selected.resOrCom)
 
     // add service to state just once
-    const [serviceState, setServiceState] = useState([])
+    const [serviceState, setServiceState] = useState(props.state.selected.services)
 
     const addToService = (service) => {
         if(!serviceState.includes(service)){

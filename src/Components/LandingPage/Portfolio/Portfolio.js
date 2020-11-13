@@ -53,8 +53,8 @@ const Portfolio = () => {
     const handleClose = () => {setOpen(false)}
 
     return (
-        <div className='portfolio'>
-            <div className='portfolio-header'>
+        <div className='portfolio' >
+            <div className='portfolio-header' id='portfolio'>
                 <h1>Work We've Done</h1>
                 <h2>Check out the projects completed in the past by our team.</h2>
             </div>
