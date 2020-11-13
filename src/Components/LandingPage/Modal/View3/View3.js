@@ -19,16 +19,16 @@ const View3 = (props) => {
             <div className='view1'>
                 <div className='view-title'>
                     <h1>Contact Information</h1>
-                    <h2>Best way can we stay in contact.</h2>
+                    <h2>Best way we can stay in contact.</h2>
                 </div>
                 <Formik
                     initialValues={{
-                        name: '',
-                        email: '',
-                        phone: ''
+                        name: props.state.personal.name,
+                        email: props.state.personal.email,
+                        phone: props.state.personal.phone
                     }}
                     validationSchema={validationSchema}
-                    onSubmit={values => console.log(values)}
+                    onSubmit={values => props.handleUpdate('personal', values)}
                 >
                     {({values, errors, touched}) => (
                         <Form className='view-content'>
@@ -87,10 +87,7 @@ const View3 = (props) => {
                                 <button
                                     disabled={errors.name ||  errors.email || errors.phone || !values.name || !values.email || !values.phone ? true : false}
                                     className={errors.name || errors.email || errors.phone || !values.name || !values.email || !values.phone ? null : 'modal-button-active' }
-                                    
-                                    onClick={() => {
-                                        console.log('hi')
-                                    }}
+                                    type='submit'
                                 >Continue</button>
                             </div>
                         </Form>

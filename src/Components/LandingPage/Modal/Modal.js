@@ -13,7 +13,7 @@ export default class Modal extends Component {
 
         this.state = {
             view: 'view1',
-            selected: {},
+            selected: {'resOrCom' : null, 'services' : []},
             location: {},
             personal: {}
         }
@@ -46,6 +46,7 @@ export default class Modal extends Component {
                 <div className='modal-form-body'>
                     {this.state.view === 'view1' ? 
                         <View1
+                            state={this.state}
                             handleView={this.handleView}
                             handleUpdate={this.handleUpdateForm}
                          />
@@ -54,6 +55,7 @@ export default class Modal extends Component {
                     }
                     {this.state.view === 'view2' ? 
                         <View2
+                            state={this.state}
                             handleView={this.handleView}
                             handleUpdate={this.handleUpdateForm}
                          />
@@ -64,6 +66,7 @@ export default class Modal extends Component {
                         <View3
                             handleView={this.handleView}
                             handleUpdate={this.handleUpdateForm}
+                            state={this.state}
                          />
                         :
                         null

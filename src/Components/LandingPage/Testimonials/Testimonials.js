@@ -29,8 +29,8 @@ const Testimonials = () => {
         ]
     }
     return (
-        <div className='testimonials'>
-            <div className='testimonials-div-info'>
+        <div className='testimonials' id='testimonials'>
+            <div className='testimonials-div-info' >
                 <h1>Our Clients Love What We Do</h1>
                 <h2>See what our previous clients have to say about our work.</h2>
             </div>
