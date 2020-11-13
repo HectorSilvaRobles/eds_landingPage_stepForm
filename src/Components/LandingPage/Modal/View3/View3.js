@@ -33,13 +33,13 @@ const View3 = (props) => {
                     {({values, errors, touched}) => (
                         <Form className='view-content'>
                             <div className='view3-form'>
-                                <div className={errors.name && touched.name ? 'form-input-error' : null}>
+                                <div>
                                     <div className='form-title'>
                                         <h1>Name</h1>
                                         {errors.name && touched.name ? <h2>*{errors.name}</h2> : null}
                                     </div>
-                                    <div className='form-input'>
-                                        <div className='form-input-icon'><MdPerson /></div>
+                                    <div className={errors.name && touched.name ? 'form-input-error' : 'form-input'}>
+                                        <div className={errors.name && touched.name ? 'form-input-icon-error' : 'form-input-icon'}><MdPerson /></div>
                                         <div className='form-input-field'>
                                             <Field 
                                                 id='name' 
@@ -49,13 +49,13 @@ const View3 = (props) => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className={errors.email && touched.email ? 'form-input-error' : null}>
+                                <div>
                                     <div className='form-title'>
                                         <h1>Email</h1>
                                         {errors.email && touched.email ? <h2>*{errors.email}</h2> : null}
                                     </div>
-                                    <div className='form-input'>
-                                        <div className='form-input-icon'><MdEmail /></div>
+                                    <div className={errors.email && touched.email ? 'form-input-error' : 'form-input'}>
+                                        <div className={errors.email && touched.email ? 'form-input-icon-error' : 'form-input-icon'}><MdEmail /></div>
                                         <div className='form-input-field'>
                                             <Field 
                                                 id='email' 
@@ -65,13 +65,13 @@ const View3 = (props) => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className={errors.phone && touched.phone ? 'form-input-error' : null}>
+                                <div >
                                     <div className='form-title'>
                                         <h1>Phone</h1>
                                         {errors.phone && touched.phone ? <h2>*{errors.phone}</h2> : null}
                                     </div>
-                                    <div className='form-input'>
-                                        <div className='form-input-icon'><MdLocalPhone /></div>
+                                    <div className={errors.phone && touched.phone ? 'form-input-error' : 'form-input'}>
+                                        <div className={errors.phone && touched.phone ? 'form-input-icon-error' : 'form-input-icon'}><MdLocalPhone /></div>
                                         <div className='form-input-field'>
                                             <Field 
                                                 id='phone' 
@@ -85,12 +85,12 @@ const View3 = (props) => {
                             
                             <div className='view1-content-button'>
                                 <button
-                                    // disabled={serviceState.length === 0 || resOrCom === null ? true : false}
-                                    // className={serviceState.length === 0 || resOrCom === null ? null : 'modal-button-active'}
-                                    // onClick={() => {
-                                    //     props.handleUpdate('selected', {'resOrCom': resOrCom, 'services' : serviceState})
-                                    //     props.handleView('view2')
-                                    // }}
+                                    disabled={errors.name ||  errors.email || errors.phone || !values.name || !values.email || !values.phone ? true : false}
+                                    className={errors.name || errors.email || errors.phone || !values.name || !values.email || !values.phone ? null : 'modal-button-active' }
+                                    
+                                    onClick={() => {
+                                        console.log('hi')
+                                    }}
                                 >Continue</button>
                             </div>
                         </Form>

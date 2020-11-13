@@ -21,6 +21,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 2px 0;
+
 }
 .form-title > h1 {
     font-family: Arial, Helvetica, sans-serif;
@@ -29,7 +31,6 @@
     cursor: default;
     color: #192D5A;
     line-height: 1;
-    margin: 5px 0;
 }
 .form-title > h2 {
     font-family: Arial, Helvetica, sans-serif;
@@ -41,7 +42,7 @@
     margin: 0;
 }
 
-.form-input {
+.form-input, .form-input-error {
     height: 70%;
     width: 100%;
     border-radius: 1000px;
@@ -49,8 +50,11 @@
     overflow: hidden;
     border: solid 5px #E16D41;
 }
+.form-input-error {
+    border: solid 5px red;
+}
 
-.form-input-icon {
+.form-input-icon, .form-input-icon-error {
     width: 20%;
     height: 100%;
     background: #E16D41;
@@ -58,7 +62,10 @@
     justify-content: center;
     align-items: center;
 }
-.form-input-icon > svg {
+.form-input-icon-error {
+    background: red;
+}
+.form-input-icon > svg, .form-input-icon-error > svg {
     color: white;
     font-size: 45px;
 }
@@ -76,4 +83,149 @@
 }
 .form-input-field > input:focus {
     outline: none;
+}
+
+
+@media screen and (max-width: 900px) {
+    .view3-form {
+        height: 85%;
+    }
+    .view3-form > div {
+        width: 90%;
+        height: 30%;
+    }
+    .form-title > h1 {
+        font-size: calc(22px + (25 - 22) * ((100vw - 300px) / (600 - 300)));
+        margin: 0;
+    }
+    .form-title > h2 {
+        font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (600 - 300)));
+    }
+    .form-input, .form-input-error {
+        height: 60%;
+    }
+    .form-input-icon, .form-input-icon-error {
+        width: 25%;
+    }
+    .form-input-icon > svg, .form-input-icon-error > svg {
+        font-size: calc(30px + (35 - 30) * ((100vw - 300px) / (600 - 300)));
+    }
+    .form-input-field {
+        width: 75%;
+    }
+    .form-input-field > input {
+        font-size: calc(18px + (24 - 18) * ((100vw - 300px) / (600 - 300)));
+        padding-left: 15px;
+    }
+}
+
+@media screen and (max-width: 700px) and (min-width: 501px) {
+    .view3-form {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 900px) and (min-width: 701px){
+    .view3-form {
+        width: 80%;
+    }
+
+    .form-input-icon, .form-input-icon-error {
+        width: 20%;
+    }
+    .form-input-field {
+        width: 80%;
+    }
+
+    .form-title > h1 {
+        font-size: calc(20px + (24 - 20) * ((100vw - 700px) / (900 - 700)));
+    }
+    .form-title > h2 {
+        font-size: calc(16px + (18 - 16) * ((100vw - 700px) / (900 - 700)));
+    }
+    .form-input-field > input {
+        font-size: calc(20px + (24 - 20) * ((100vw - 700px) / (900 - 700)));
+    }
+}
+
+
+@media screen and (max-width: 1100px) and (min-width: 901px) {
+    .form-title > h1 {
+        font-size: calc(20px + (25 - 20) * ((100vw - 900px) / (1100 - 901)));
+        margin: 0;
+    }
+    .form-title > h2 {
+        font-size: calc(18px + (20 - 18) * ((100vw - 900px) / (1100 - 901)));
+    }
+    .view3-form > div {
+        width: 65%;
+        height: 30%;
+    }
+    .form-input, .form-input-error {
+        height: 65%;
+    }
+    .form-input-field > input {
+        font-size: calc(20px + (25 - 20) * ((100vw - 900px) / (1100 - 901)));
+    }
+    .form-input-icon > svg, .form-input-icon-error > svg {
+        font-size: calc(40px + (45 - 40) * ((100vw - 900px) / (1100 - 901)));
+    }
+}
+
+
+@media screen and (max-width: 1450px) and (min-width: 1101px) {
+    .form-title > h1 {
+        font-size: calc(22px + (25 - 22) * ((100vw - 1100px) / (1450 - 1101)));
+        margin: 0;
+    }
+    .form-title > h2 {
+        font-size: calc(18px + (20 - 18) * ((100vw - 1100px) / (1450 - 1101)));
+    }
+    .view3-form > div {
+        width: 65%;
+    }
+    .form-input-field > input {
+        font-size: calc(20px + (25 - 20) * ((100vw - 1100px) / (1450 - 1101)));
+        
+    }
+    .form-input-icon > svg, .form-input-icon-error > svg {
+        font-size: calc(35px + (40 - 35) * ((100vw - 1100px) / (1450 - 1101)));
+    }
+}
+
+
+@media screen and (min-width: 1700px) {
+    .form-title > h1 {
+        font-size: calc(25px + (40 - 25) * ((100vw - 1700px) / (3000 - 1701)));
+        margin: 0;
+    }
+    .form-title > h2 {
+        font-size: calc(20px + (30 - 20) * ((100vw - 1700px) / (3000 - 1701)));
+    }
+    .view3-form > div {
+        width: 60%;
+    }
+    .form-input-icon > svg, .form-input-icon-error > svg {
+        font-size: calc(40px + (65 - 40) * ((100vw - 1700px) / (3000 - 1701)));
+    }
+
+    .form-input-field > input {
+        font-size: calc(25px + (40 - 25) * ((100vw - 1700px) / (3000 - 1701)));
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    .view3-form > div {
+        width: 65%;
+        height: 30%;
+    }
+    .form-input {
+        height: 65%;
+    }
+}
+
+@media screen and (min-width: 2400px) {
+    .view3-form > div {
+        width: 60%;
+    }
 }
