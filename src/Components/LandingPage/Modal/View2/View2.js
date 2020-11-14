@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PlacesAutocomplete from 'react-places-autocomplete';
+import {MdLocationOn} from 'react-icons/md'
 import './view2.css'
 
 export default class View2 extends Component {
@@ -22,44 +23,55 @@ export default class View2 extends Component {
                 </div>
                 <div className='view-content'>
                     <div className='view2-form'>
-                        <PlacesAutocomplete
-                            value={this.state.address}
-                            onChange={this.handleChange}
-                            onSelect={this.handleSelect}
-                        >
-                            {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-                            <div>
-                                <input
-                                {...getInputProps({
-                                    placeholder: 'Search Places ...',
-                                    className: 'location-search-input',
-                                })}
-                                />
-                                <div className="autocomplete-dropdown-container">
-                                {loading && <div>Loading...</div>}
-                                {suggestions.map(suggestion => {
-                                    const className = suggestion.active
-                                    ? 'suggestion-item--active'
-                                    : 'suggestion-item';
-                                    // inline style for demonstration purpose
-                                    const style = suggestion.active
-                                    ? { backgroundColor: '#fafafa', cursor: 'pointer' }
-                                    : { backgroundColor: '#ffffff', cursor: 'pointer' };
-                                    return (
-                                    <div
-                                        {...getSuggestionItemProps(suggestion, {
-                                        className,
-                                        style,
-                                        })}
+                        <div className='view2-form-input'>
+                            <div className='view2-input'>
+                                <div className='view2-input-title'><h1>Address</h1></div>
+                                <div className='view2-input-field'>
+                                    <PlacesAutocomplete
+                                        value={this.state.address}
+                                        onChange={this.handleChange}
+                                        onSelect={this.handleSelect}
                                     >
-                                        <span>{suggestion.description}</span>
-                                    </div>
-                                    );
-                                })}
+                                        {({ getInputProps, suggestions, getSuggestionItemProps}) => (
+                                        <div >
+                                            <input
+                                            {...getInputProps({
+                                                placeholder: 'Enter property location',
+                                            })}
+                                            />
+                                            <div className="autocomplete-dropdown-container">
+                                                <div>
+                                                    {suggestions.map((suggestion, i) => {
+                                                        const className = suggestion.active
+                                                        ? 'suggestion-item--active'
+                                                        : 'suggestion-item';
+                                                        
+                                                        return (
+                                                            <div
+                                                                {...getSuggestionItemProps(suggestion, {
+                                                                className,
+                                                                })}
+                                                                key={i}
+                                                            >
+                                                                <div className='suggestion-item-icon' >
+                                                                    <MdLocationOn />
+                                                                </div>
+                                                                <div className='suggestion-item-words'>
+                                                                    <h1>{suggestion.description}</h1>
+                                                                </div>
+                                                            </div>
+                                                        );
+                                                    })}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        )}
+                                    </PlacesAutocomplete>
                                 </div>
                             </div>
-                            )}
-                        </PlacesAutocomplete>
+                        </div>
+                        <div className='view2-form-map'></div>
+                        
                     </div>
                     <div className='view1-content-button'>
                         <button
