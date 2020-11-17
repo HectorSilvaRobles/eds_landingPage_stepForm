@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import PlacesAutocomplete from 'react-places-autocomplete';
+import PlacesAutocomplete, {geocodeByAddress, getLatLng} from 'react-places-autocomplete';
 import {MdLocationOn} from 'react-icons/md'
 import './view2.css'
 
@@ -11,10 +11,30 @@ export default class View2 extends Component {
     }
 
     handleChange = address => {
-        this.setState({address})
+        this.setState({'address' : address})
     }
 
+    handleSelect = address => {
+        geocodeByAddress(address)
+          .then(results => getLatLng(results[0]))
+          .then(latLng => console.log('Success', latLng))
+          .catch(error => console.error('Error', error));
+    };
+
+    handleClick =(address)  => {
+        console.log('hit')
+        var input = document.getElementById('id_address');
+        input.blur();
+        this.setState({address: address.description})
+        // geocodeByAddress(address.description)
+        // .then(results => getLatLng(results[0]))
+        // .then(latLng => this.setState({address: address.description, lat: latLng.lat, long: latLng.lng}))
+        // .catch(error => console.log('error', error))
+    }
+
+
     render(){
+        console.log(this.state)
         return (
             <div className='view1'>
                 <div className='view-title'>
@@ -32,37 +52,24 @@ export default class View2 extends Component {
                                         onChange={this.handleChange}
                                         onSelect={this.handleSelect}
                                     >
-                                        {({ getInputProps, suggestions, getSuggestionItemProps}) => (
-                                        <div >
-                                            <input
-                                            {...getInputProps({
-                                                placeholder: 'Enter property location',
-                                            })}
-                                            />
+                                        {({ getInputProps, suggestions, getSuggestionItemProps, loading}) => (
+
+                                        <div  >
+                                            <input {...getInputProps({placeholder: 'Enter property location'})} id='id_address'/>
                                             <div className="autocomplete-dropdown-container">
-                                                <div>
-                                                    {suggestions.map((suggestion, i) => {
-                                                        const className = suggestion.active
-                                                        ? 'suggestion-item--active'
-                                                        : 'suggestion-item';
-                                                        
-                                                        return (
-                                                            <div
-                                                                {...getSuggestionItemProps(suggestion, {
-                                                                className,
-                                                                })}
-                                                                key={i}
-                                                            >
-                                                                <div className='suggestion-item-icon' >
-                                                                    <MdLocationOn />
-                                                                </div>
-                                                                <div className='suggestion-item-words'>
-                                                                    <h1>{suggestion.description}</h1>
-                                                                </div>
+                                                {suggestions.map((suggestion, i) => {
+                                                    const className = suggestion.active ? 'suggestion-item--active' : 'suggestion-item';
+                                                    return (
+                                                        <div {...getSuggestionItemProps(suggestions, { className})} key={i}  >
+                                                            <div className='suggestion-item-icon' onClick={() => this.handleClick(suggestion)} >
+                                                                <MdLocationOn />
                                                             </div>
-                                                        );
-                                                    })}
-                                                </div>
+                                                            <div className='suggestion-item-words' onClick={() => this.handleClick(suggestion)} >
+                                                                <h1>{suggestion.description}</h1>
+                                                            </div>
+                                                        </div>
+                                                    );
+                                                })}
                                             </div>
                                         </div>
                                         )}

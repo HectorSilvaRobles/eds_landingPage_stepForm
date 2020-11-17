@@ -4,6 +4,7 @@ import heroImageMobile from '../../../Assets/heromobile.jpg'
 import Modal from '@material-ui/core/Modal'
 import ModalForm from '../Modal/Modal';
 import Backdrop from '@material-ui/core/Backdrop'
+import DialogContent from '@material-ui/core/DialogContent';
 import Fade from '@material-ui/core/Fade'
 
 import './hero.css'
@@ -32,6 +33,7 @@ const Hero = () => {
                             className='hero-quote-button' 
                             onClick={handleOpen}
                         >Get Quote</button>
+                        
                         <Modal
                             open={open}
                             onClose={handleClose}

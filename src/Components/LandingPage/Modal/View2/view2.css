@@ -44,6 +44,7 @@
     border-radius: 10000px;
     /* overflow: hidden; */
     border: solid 5px #E16D41;
+    z-index: 2;
 }
 
 .view2-input-field > div, .view2-input-field > div > input {
@@ -51,21 +52,24 @@
     height: 100%;
     border: none;
     border-radius: 10000px;
-
 }
+
 .suggestion-item, .suggestion-item--active{
-    background: white;
     border: solid #192D5A 1px;
     display: flex;
     align-items: center;
     border-radius: 5px;
-    min-height: 40px;
     padding: 10px;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    background: white;
 }
 
 .suggestion-item--active {
-    background: #192D5A;
+    background: #192D5A !important;
 }
+
 
 .suggestion-item-icon {
     width: 10%;
@@ -73,7 +77,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: red;
 }
 .suggestion-item-icon > svg {
     color: #192D5A;
@@ -86,7 +89,6 @@
     width: 90%;
     display: flex;
     align-items: center;
-    background: green;
 }
 .suggestion-item-words > h1 {
     font-size: calc(16px + (20 - 16) * ((100vw - 1450px) / (1800 - 1450)));
@@ -94,7 +96,6 @@
 }
 
 .autocomplete-dropdown-container{
-    z-index: 1;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -105,9 +106,12 @@
     width: 90%;
     height: 100%;
 }
+
+
 .view2-input-field > div > input {
     padding-left: 30px;
     font-size: calc(20px + (25 - 20) * ((100vw - 1450px) / (1800 - 1450)));
+    z-index: 1.1;
 
 }
 .view2-input-field > div > input:focus {
@@ -115,7 +119,136 @@
 }
 
 .view2-form-map {
-    /* background: blue; */
+    background: blue;
     height: 65%;
     width: 100%;
+}
+
+
+
+
+@media screen and (max-width: 900px){
+    .view2-input {
+        width: 90%;
+    }
+    .view2-form-input {
+        height: 30%;
+    }
+    .view2-input-title {
+        justify-content: center;;
+    }
+    .view2-input-title > h1 {
+        font-size: calc(20px + (28 - 20) * ((100vw - 300px) / (600 - 300)));
+    }
+
+    .view2-form-map {
+        height: 70%;
+    }
+
+    .view2-input-field > div > input {
+        padding-left: 20px;
+        font-size: calc(20px + (25 - 20) * ((100vw - 300px) / (600 - 300)));
+    }
+    .suggestion-item-words > h1 {
+        font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (600 - 300)));
+        margin: 0;
+    }
+
+    .suggestion-item-icon {
+        width: 15%;
+    }
+    .suggestion-item-words {
+        width: 85%;
+    }
+    .suggestion-item-icon > svg {
+        /* height: 22px;
+        width: 22px; */
+        font-size: 25px;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 700px) and (min-width: 501px){
+    .view2-input {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 900px) and (min-width: 701px) {
+    .view2-input {
+        width: 70%;
+    }
+    .view2-form-input {
+        height: 35%
+    }
+    .view2-form-map {
+        height: 65%;
+    }
+    .view2-input-title {
+        justify-content: flex-start;
+    }
+    .view2-input-title > h1 {
+        font-size: calc(24px + (26 - 24) * ((100vw - 700px) / (900 - 700)));
+    }
+    .view2-input-field > div > input {
+        padding-left: 20px;
+        font-size: calc(22px + (24 - 22) * ((100vw - 700px) / (900 - 700)));
+    }
+    .suggestion-item-words > h1 {
+        font-size: calc(16px + (18 - 16) * ((100vw - 700px) / (900 - 700)));
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 1100px) and (min-width: 901px) {
+    .view2-input-title > h1 {
+        font-size: calc(22px + (25 - 22) * ((100vw - 900px) / (1100 - 901)));
+        
+    }
+    .view2-input-field > div > input {
+        font-size: calc(22px + (25 - 22) * ((100vw - 900px) / (1100 - 901)));
+    }
+    .suggestion-item-words > h1 {
+        font-size: calc(16px + (20 - 16) * ((100vw - 900px) / (1100 - 901)));
+    }
+}
+
+
+@media screen and (max-width: 1450px) and (min-width: 1101px) {
+    .view2-input-title > h1 {
+        font-size: calc(20px + (25 - 20) * ((100vw - 1100px) / (1450 - 1101)));
+    }
+    .view2-input-field > div > input {
+        font-size: calc(20px + (25 - 20) * ((100vw - 1100px) / (1450 - 1101)));
+    }
+    .suggestion-item-words > h1 {
+        font-size: calc(18px + (22 - 18) * ((100vw - 1100px) / (1450 - 1101)));
+    }
+}
+
+@media screen and (min-width: 1700px) {
+    .view2-input-title > h1 {
+        font-size: calc(28px + (40 - 28) * ((100vw - 1700px) / (3000 - 1701)));
+    }
+    .view2-input-field > div > input {
+        font-size: calc(25px + (35 - 25) * ((100vw - 1700px) / (3000 - 1701)));
+        padding-left: 40px;
+    }
+    .suggestion-item-icon > svg {
+        height: 28px;
+        width: 28px;
+        margin: 0;
+    }
+}
+
+
+@media screen and (min-width: 2200px) {
+    .suggestion-item-icon > svg {
+        height: 35px;
+        width: 35px;
+    }
+
+    .view2-input {
+        width: 65%;
+    }
 }

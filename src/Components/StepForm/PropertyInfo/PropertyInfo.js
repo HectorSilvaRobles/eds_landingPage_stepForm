@@ -4,6 +4,9 @@ import {FaHome} from 'react-icons/fa'
 import {MdBusiness} from 'react-icons/md'
 import StepFormDots from '../StepFormDots/StepFormDots'
 
+import PlacesAutocomplete, {geocodeByAddress, getLatLng} from 'react-places-autocomplete';
+import {MdLocationOn} from 'react-icons/md'
+
 export class PropertyInfo extends Component {
     constructor(props){
         super(props)
@@ -11,7 +14,30 @@ export class PropertyInfo extends Component {
         this.state = {
             res_or_com: this.props.values.res_or_com,
             intr_extr_both: this.props.values.intr_extr_both,
+            address: null
         }
+    }
+
+    handleChange = address => {
+        this.setState({address})
+    }
+
+    handleSelect = address => {
+        console.log(address)
+        geocodeByAddress(address)
+          .then(results => getLatLng(results[0]))
+          .then(latLng => console.log('Success', latLng))
+          .catch(error => console.error('Error', error));
+    };
+
+    handleClick =(address)  => {
+        console.log('hit')
+        var input = document.getElementById('id_address');
+        input.blur();
+        geocodeByAddress(address.description)
+        .then(results => getLatLng(results[0]))
+        .then(latLng => this.setState({address: address.description, lat: latLng.lat, long: latLng.lng}))
+        .catch(error => console.log('error', error))
     }
 
     continue = e => {
@@ -34,6 +60,32 @@ export class PropertyInfo extends Component {
         const {res_or_com, intr_extr_both} = this.state
         return (
             <div className='stepform'>
+                <PlacesAutocomplete
+                                        value={this.state.address}
+                                        onChange={this.handleChange}
+                                        onSelect={this.handleSelect}
+                                    >
+                                        {({ getInputProps, suggestions, getSuggestionItemProps, loading}) => (
+                                        <div >
+                                            <input {...getInputProps({placeholder: 'Enter property location'})} id='id_address'/>
+                                            <div className="autocomplete-dropdown-container">
+                                                {suggestions.map((suggestion, i) => {
+                                                    const className = suggestion.active ? 'suggestion-item--active' : 'suggestion-item';
+                                                    return (
+                                                        <div disabled={false} {...getSuggestionItemProps(suggestions, { className})} key={i} onClick={() => this.handleClick(suggestion)} >
+                                                            <div className='suggestion-item-icon' >
+                                                                <MdLocationOn />
+                                                            </div>
+                                                            <div className='suggestion-item-words' >
+                                                                <h1>{suggestion.description}</h1>
+                                                            </div>
+                                                        </div>
+                                                    );
+                                                })}
+                                            </div>
+                                        </div>
+                                        )}
+                                    </PlacesAutocomplete>
                 <div className='property_info'>
                     <div className='property_info_title'>
                         <h1>Type Of Work</h1>
