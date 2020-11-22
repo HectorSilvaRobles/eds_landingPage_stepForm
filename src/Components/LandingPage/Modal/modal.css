@@ -20,6 +20,14 @@
     flex-direction: column;
 }
 
+.modal-thank {
+    height: 500px;
+    width: 45%;
+    background: white;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
 .modal-form-top {
     height: 10%;
     width: 100%;
@@ -68,6 +76,11 @@
     width: 100%;
 }
 
+.modal-thankyou-body {
+    height: 100%;
+    width: 100%;
+}
+
 
 @media screen and (max-width: 900px){
     .modal-form {
@@ -88,6 +101,11 @@
     .modal-form-top-space > svg {
         font-size: 28px;
     }
+
+    .modal-thank {
+        width: 90%;
+        height: 300px;
+    }
 }
 
 @media screen and (max-width: 700px) and (min-width: 501px){
@@ -99,6 +117,10 @@
 @media screen and (max-width: 900px) and (min-width: 701px) {
     .modal-form {
         width: 80%;
+    }
+    .modal-thank {
+        width: 80%;
+        height: 350px;
     }
 }
 
@@ -113,6 +135,10 @@
         width: 25px;
         margin: 0 10px;
     }
+    .modal-thank {
+        width: 70%;
+        height: 400px;
+    }
 }
 
 
@@ -120,6 +146,10 @@
     .modal-form {
         width: 60%;
         height: 700px;
+    }
+    .modal-thank {
+        width: 60%;
+        height: 450px;
     }
 }
 

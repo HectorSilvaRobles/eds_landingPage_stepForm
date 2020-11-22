@@ -11,7 +11,66 @@ export default function SideDrawer(props){
 
     return (
         <div className={drawerClasses}>
-            <Link>Home</Link>
+            <Link
+                        activeClass='active-menu'
+                        to='hero'
+                        spy={true}
+                        smooth={true}
+                        duration={500}
+                        offset={-70}
+                        onClick={props.close}
+
+                    >Home</Link>
+                    <Link
+                        activeClass='active-menu'
+                        to='services'
+                        spy={true}
+                        smooth={true}
+                        duration={500}
+                        offset={0}
+                        onClick={props.close}
+
+                    >Services</Link>
+                    <Link
+                        activeClass='active-menu'
+                        to='portfolio'
+                        spy={true}
+                        smooth={true}
+                        duration={500}
+                        offset={-50}
+                        onClick={props.close}
+
+                    >Portfolio</Link>
+                    <Link
+                        activeClass='active-menu'
+                        to='testimonials'
+                        spy={true}
+                        smooth={true}
+                        duration={500}
+                        offset={0}
+                        onClick={props.close}
+
+                    >Testimonials</Link>
+                    <Link
+                        activeClass='active-menu'
+                        to='about'
+                        spy={true}
+                        smooth={true}
+                        duration={500}
+                        offset={0}
+                        onClick={props.close}
+
+                    >About</Link>
+                    <Link
+                        activeClass='active-menu'
+                        to='contact'
+                        spy={true}
+                        smooth={true}
+                        duration={500}
+                        offset={0}
+                        onClick={props.close}
+
+                    >Contact</Link>
         </div>
     )
 }

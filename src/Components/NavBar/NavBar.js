@@ -1,28 +1,26 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import {Link} from 'react-scroll'
 import Backdrop from './Hamburger/Backdrop/Backdrop'
 import SideDrawer from './Hamburger/SideDrawer/SideDrawer'
 import ToggleButton from './Hamburger/ToggleButton/ToggleButton'
+import Logo from '../../Assets/eds.png'
 import './navbar.css'
 
-export class NavBar extends Component {
-    constructor(props){
-        super(props)
-        this.state={drawerOpen : false}
+const NavBar = () => {
+     const [drawerOpen, setDrawerOpen] = useState(false)
+
+    const drawerToggleClick = () => {
+        setDrawerOpen(!drawerOpen)
     }
 
-    drawerToggleClick = () => {
-        this.setState(!this.state.drawerOpen)
+    const backdropClick = () => {
+        setDrawerOpen(false)
     }
 
-    backdropClick = () => {
-        this.setState(false)
-    }
-
-    render() {
+    
         return (
             <div className='nav'>
-                <div className='navbar-logo'></div>
+                <div className='navbar-logo'><img src={Logo} /></div>
                 <div className='navbar-menu'>
                     <Link
                         activeClass='active-menu'
@@ -74,13 +72,12 @@ export class NavBar extends Component {
                     >Contact</Link>
                 </div>
                 <div className='togglebutton'>
-                    <ToggleButton click={this.drawerToggleClick} />
-                    <SideDrawer show={this.state.drawerOpen} close={this.drawerToggleClick} />
-                    {this.state.drawerOpen !== false ? <Backdrop click={this.backdropClick} /> : null}
+                    <ToggleButton click={drawerToggleClick} />
+                    <SideDrawer show={drawerOpen} close={drawerToggleClick} />
+                    {drawerOpen !== false ? <Backdrop click={backdropClick} /> : null}
                 </div>
             </div>
         )
-    }
 }
 
 export default NavBar

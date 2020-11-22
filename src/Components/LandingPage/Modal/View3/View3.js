@@ -28,7 +28,10 @@ const View3 = (props) => {
                         phone: props.state.personal.phone
                     }}
                     validationSchema={validationSchema}
-                    onSubmit={values => props.handleUpdate('personal', values)}
+                    onSubmit={values => {
+                        props.handleUpdate('personal', values)
+                        props.handleView('thankyou')
+                        }}
                 >
                     {({values, errors, touched}) => (
                         <Form className='view-content'>
