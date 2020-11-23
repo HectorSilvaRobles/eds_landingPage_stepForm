@@ -13,8 +13,8 @@ const Portfolio = () => {
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
-        // autoplay: true,
-        speed: 2000,
+        autoplay: true,
+        speed: 500,
         cssEase: "linear",
         className: 'ourWork-slider',
         responsive: [

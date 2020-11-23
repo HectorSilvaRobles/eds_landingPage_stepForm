@@ -52,6 +52,7 @@
     height: 100%;
     border: none;
     border-radius: 10000px;
+    font-family: Arial, Helvetica, sans-serif
 }
 
 .suggestion-item, .suggestion-item--active{
@@ -92,6 +93,7 @@
 }
 .suggestion-item-words > h1 {
     font-size: calc(16px + (20 - 16) * ((100vw - 1450px) / (1800 - 1450)));
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
 }
 
