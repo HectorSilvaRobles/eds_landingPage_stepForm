@@ -45,8 +45,6 @@
 .ourWork-slider {
     height: 100%;
     width: 100%;
-    display: flex;
-    justify-content: space-around;
 }
 
 .ourwork-card {
@@ -88,6 +86,7 @@
     text-transform: capitalize;
     font-size: 25px;
     color: white;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .ow-card-button{
