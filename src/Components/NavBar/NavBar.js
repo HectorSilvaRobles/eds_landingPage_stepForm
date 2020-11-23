@@ -3,7 +3,7 @@ import {Link} from 'react-scroll'
 import Backdrop from './Hamburger/Backdrop/Backdrop'
 import SideDrawer from './Hamburger/SideDrawer/SideDrawer'
 import ToggleButton from './Hamburger/ToggleButton/ToggleButton'
-import Logo from '../../Assets/eds.png'
+import Logo from '../../Assets/logo1.png'
 import './navbar.css'
 
 const NavBar = () => {

@@ -57,7 +57,7 @@
     align-items: center;
 }
 
-.modal-form-top-dots > div {
+.modal-form-top-dots > button, #modal-dot-disabled {
     height: 30px;
     width: 30px;
     border-radius: 50%;
@@ -65,6 +65,13 @@
     border: solid 5px #E16D41;
     cursor: pointer;
     margin: 0 15px;
+}
+#modal-dot-disabled {
+    border: solid 5px #d8d8d8 !important;
+    cursor: default
+}
+.modal-form-top-dots > button:focus, #modal-dot-disabled:focus {
+    outline: none;
 }
 
 .modal-dot-active {
@@ -93,7 +100,7 @@
     .modal-form-top-space {
         width: 25%;
     }
-    .modal-form-top-dots > div {
+    .modal-form-top-dots > button, .modal-dot-disabled  {
         height: 22px;
         width: 22px;
         margin: 10px;
@@ -130,7 +137,7 @@
         width: 70%;
         height: 660px;
     }
-    .modal-form-top-dots > div {
+    .modal-form-top-dots > button {
         height: 25px;
         width: 25px;
         margin: 0 10px;
@@ -157,7 +164,7 @@
     .modal-form {
         height: 900px;
     }
-    .modal-form-top-dots > div {
+    .modal-form-top-dots > button {
         height: 35px;
         width: 35px;
     }

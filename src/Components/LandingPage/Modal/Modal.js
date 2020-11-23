@@ -41,9 +41,22 @@ export default class Modal extends Component {
                         </div>
                         {this.state.view === 'confirmation' ? <div className='modal-form-top-dots' /> : 
                         <div className='modal-form-top-dots'>
-                            <div onClick={() => this.handleView('view1')} className={this.state.view === 'view1' ? 'modal-dot-active' : null} />
-                            <div onClick={() => this.handleView('view2')} className={this.state.view === 'view2' ? 'modal-dot-active' : null} />
-                            <div onClick={() => this.handleView('view3')} className={this.state.view === 'view3' ? 'modal-dot-active' : null} />
+                            <button 
+                                onClick={() => this.handleView('view1')} 
+                                className={this.state.view === 'view1' ? 'modal-dot-active' : null} 
+                            />
+                            <button 
+                                onClick={() => this.handleView('view2')} 
+                                className={this.state.view === 'view2' ? 'modal-dot-active' : null} 
+                                disabled={!this.state.selected.resOrCom || !this.state.selected.services.length > 0 ?  true : false}
+                                id={!this.state.selected.resOrCom || !this.state.selected.services.length > 0 ? 'modal-dot-disabled' : null}
+                            />
+                            <button 
+                                onClick={() => this.handleView('view3')} 
+                                className={this.state.view === 'view3' ? 'modal-dot-active' : null}
+                                disabled={!this.state.location.address ?  true : false}
+                                id={!this.state.location.address ?  'modal-dot-disabled' : null}
+                            />
                         </div>
                         }
 
