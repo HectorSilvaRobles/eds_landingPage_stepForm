@@ -1,13 +1,25 @@
 import React, {Component} from 'react';
 import PlacesAutocomplete, {geocodeByAddress, getLatLng} from 'react-places-autocomplete';
 import {MdLocationOn} from 'react-icons/md'
+import GoogleMapReact from 'google-map-react'
 import './view2.css'
+
+const AnyReactComponent = () => <div className='map-icon'></div>;
 
 export default class View2 extends Component {
     constructor(props){
         super(props)
 
-        this.state = { address: ''}
+        this.state = { 
+            address: this.props.state.location.address,
+            map : {
+                center: {
+                    lng: this.props.state.location.lng,
+                    lat: this.props.state.location.lat
+                },
+                zoom: 16
+            }
+        }
     }
 
     handleChange = address => {
@@ -26,15 +38,21 @@ export default class View2 extends Component {
         var input = document.getElementById('id_address');
         input.blur();
         this.setState({address: address.description})
-        // geocodeByAddress(address.description)
-        // .then(results => getLatLng(results[0]))
-        // .then(latLng => this.setState({address: address.description, lat: latLng.lat, long: latLng.lng}))
-        // .catch(error => console.log('error', error))
+        geocodeByAddress(address.description)
+        .then(results => getLatLng(results[0]))
+        .then(latLng => this.setState({
+            map: {
+                center: {
+                    lat: latLng.lat, lng: latLng.lng
+                },
+                zoom: 20
+            }
+        }))
+        .catch(error => console.log('error', error))
     }
 
 
     render(){
-        console.log(this.state)
         return (
             <div className='view1'>
                 <div className='view-title'>
@@ -48,7 +66,7 @@ export default class View2 extends Component {
                                 <div className='view2-input-title'><h1>Address</h1></div>
                                 <div className='view2-input-field'>
                                     <PlacesAutocomplete
-                                        value={this.state.address}
+                                        value={this.props.state.location.address ? this.props.state.location.address : this.state.address}
                                         onChange={this.handleChange}
                                         onSelect={this.handleSelect}
                                     >
@@ -77,17 +95,31 @@ export default class View2 extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className='view2-form-map'></div>
+                        <div className='view2-form-map'>
+                            <div >
+                                <GoogleMapReact
+                                    bootstrapURLKeys={{key : process.env.REACT_APP_MAP_API}}
+                                    defaultCenter={this.state.map.center}
+                                    defaultZoom={this.state.map.zoom}
+                                    center={this.state.map.center}
+                                >
+                                    <AnyReactComponent
+                                        lat={this.state.map.center.lat}
+                                        lng={this.state.map.center.lng}
+                                    />
+                                </GoogleMapReact>
+                            </div>
+                        </div>
                         
                     </div>
                     <div className='view1-content-button'>
                         <button
-                                    // disabled={serviceState.length === 0 || resOrCom === null ? true : false}
-                                    // className={serviceState.length === 0 || resOrCom === null ? null : 'modal-button-active'}
-                                    // onClick={() => {
-                                    //     props.handleUpdate('selected', {'resOrCom': resOrCom, 'services' : serviceState})
-                                    //     props.handleView('view2')
-                                    // }}
+                            disabled={this.state.address.length < 6 ? true : false}
+                            className={this.state.address.length < 6 ? null : 'modal-button-active'}
+                            onClick={() => {
+                                this.props.handleUpdate('location', {'address' : this.state.address, 'lng' : this.state.map.center.lng, 'lat' : this.state.map.center.lat})
+                                this.props.handleView('view3')
+                            }}
                         >Continue</button>
                     </div>   
                 </div>

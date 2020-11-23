@@ -58,16 +58,16 @@ export default class WorkModal extends Component {
                     <div className='workmodal-info-words'>
                         <div className='workmodal-info-words-description'>
                             <h1>Description</h1>
-                            <p>{this.props.selectedProj.description}</p>
+                            <p>{this.props.selectedProj.description ? this.props.selectedProj.description : null}</p>
                         </div>
                         <div className='workmodal-info-words-other'>
                             <div className='modal-other-1'>
                                 <h1>Services</h1>
-                                <p>{this.props.selectedProj.type_of_work.join(', ')}</p>
+                                <p>{this.props.selectedProj.type_of_work ? this.props.selectedProj.type_of_work.join(', ') : null}</p>
                             </div>
                             <div className='modal-other-2'>
                                 <h1>Paint Color</h1>
-                                <div>{this.props.selectedProj.paint_used.map( val => {
+                                <div>{this.props.selectedProj.paint_used ? this.props.selectedProj.paint_used.map( val => {
                                     return (
                                         <div 
                                         key={val[1]}
@@ -75,7 +75,7 @@ export default class WorkModal extends Component {
                                         style={{'background': val[1]}}
                                         />
                                     )
-                                })}</div>
+                                }) : null}</div>
                             </div>
                         </div>
                     </div>

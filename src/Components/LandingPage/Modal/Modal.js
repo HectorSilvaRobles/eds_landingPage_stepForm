@@ -4,6 +4,8 @@ import {ImArrowLeft} from 'react-icons/im'
 import View1 from './View1/View1'
 import View2 from './View2/View2'
 import View3 from './View3/View3'
+import Confirmation from './Confirmation/Confirmation'
+import ThankYou from './Thankyou/ThankYou'
 import './modal.css'
 
 
@@ -14,7 +16,7 @@ export default class Modal extends Component {
         this.state = {
             view: 'view1',
             selected: {'resOrCom' : null, 'services' : []},
-            location: {},
+            location: {'address' : '', 'lng' :  -114.78, 'lat' : 32.4870},
             personal: {}
         }
     }
@@ -29,21 +31,41 @@ export default class Modal extends Component {
 
     render() {
         return (
-            <div className='modal-form'>
-                <div className='modal-form-top'>
-                    <div className='modal-form-top-space'>
-                        {this.state.view === 'view2' || this.state.view === 'view3' ? <ImArrowLeft onClick={this.state.view === 'view2' ? () => this.handleView('view1') : () => this.handleView('view2')} /> : null}
+            <div className={this.state.view === 'thankyou' ? 'modal-thank' : 'modal-form'}>
+                {this.state.view === 'thankyou' ? 
+                    null
+                    :
+                    <div className='modal-form-top'>
+                        <div className='modal-form-top-space'>
+                            {this.state.view === 'view2' || this.state.view === 'view3' ? <ImArrowLeft onClick={this.state.view === 'view2' ? () => this.handleView('view1') : () => this.handleView('view2')} /> : null}
+                        </div>
+                        {this.state.view === 'confirmation' ? <div className='modal-form-top-dots' /> : 
+                        <div className='modal-form-top-dots'>
+                            <button 
+                                onClick={() => this.handleView('view1')} 
+                                className={this.state.view === 'view1' ? 'modal-dot-active' : null} 
+                            />
+                            <button 
+                                onClick={() => this.handleView('view2')} 
+                                className={this.state.view === 'view2' ? 'modal-dot-active' : null} 
+                                disabled={!this.state.selected.resOrCom || !this.state.selected.services.length > 0 ?  true : false}
+                                id={!this.state.selected.resOrCom || !this.state.selected.services.length > 0 ? 'modal-dot-disabled' : null}
+                            />
+                            <button 
+                                onClick={() => this.handleView('view3')} 
+                                className={this.state.view === 'view3' ? 'modal-dot-active' : null}
+                                disabled={!this.state.location.address ?  true : false}
+                                id={!this.state.location.address ?  'modal-dot-disabled' : null}
+                            />
+                        </div>
+                        }
+
+                        <div className='modal-form-top-space'>
+                            <IoMdClose onClick={this.props.onClose} />
+                        </div>
                     </div>
-                    <div className='modal-form-top-dots'>
-                        <div onClick={() => this.handleView('view1')} className={this.state.view === 'view1' ? 'modal-dot-active' : null} />
-                        <div onClick={() => this.handleView('view2')} className={this.state.view === 'view2' ? 'modal-dot-active' : null} />
-                        <div onClick={() => this.handleView('view3')} className={this.state.view === 'view3' ? 'modal-dot-active' : null} />
-                    </div>
-                    <div className='modal-form-top-space'>
-                        <IoMdClose onClick={this.props.onClose} />
-                    </div>
-                </div>
-                <div className='modal-form-body'>
+                }
+                <div className={this.state.view==='thankyou' ? 'modal-thankyou-body' : 'modal-form-body'}>
                     {this.state.view === 'view1' ? 
                         <View1
                             state={this.state}
@@ -69,6 +91,19 @@ export default class Modal extends Component {
                             state={this.state}
                          />
                         :
+                        null
+                    } 
+                    {this.state.view === 'confirmation' ? 
+                        <Confirmation />
+                        :
+                        null
+                    }
+                    {this.state.view === 'thankyou' ?
+                        <ThankYou
+                            handleClose={this.props.onClose}
+                            state={this.state}
+                         />
+                        : 
                         null
                     }
                 </div>

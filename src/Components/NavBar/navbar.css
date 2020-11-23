@@ -1,5 +1,5 @@
 .nav {
-    height: 70px;
+    height: 80px;
     width: 100%;
     background: #192D5A;
     display: flex;
@@ -12,7 +12,10 @@
     height: 100%;
     display: flex;
     align-items: center;
-    background: red;
+
+}
+.navbar-logo > img {
+    height: 80%;
 }
 
 .navbar-menu {
@@ -32,6 +35,8 @@
     text-decoration: none !important;
 }
 
+
+
 @media screen and (min-width: 901px) {
     .togglebutton {
         display: none;
@@ -42,10 +47,43 @@
     .navbar-menu {
         display: none;
     }
+    .togglebutton {
+        width: 30%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .navbar-logo {
+        width: 25%;
+        height: 100%;
+    }
 }
 
-@media screen and (min-width: 1900px){
-    .navbar {
+@media screen and (max-width: 1100px) and (min-width: 901px) {
+    .navbar-logo {
+        width: 15%;
+    }
+    .navbar-menu {
+        width: 70%;
+    }
+    .navbar-menu > a {
+        font-size: calc(18px + (20 - 18) * ((100vw - 900px) / (1100 - 901)));
+    }
+}
+
+@media screen and (min-width: 1700px){
+    .nav {
+        height: 90px;
+    }
+
+    .navbar-menu > a {
+        font-size: calc(22px + (30 - 22) * ((100vw - 1700px) / (3000 - 1700)));
+    }
+}
+
+@media screen and (min-width: 2200px){
+    .nav {
         height: 100px;
     }
 }
