@@ -10,6 +10,7 @@ import CTA from './CTA/CTA'
 import About from './About/About'
 import Contact from './Contact/Contact'
 import Footer from './Footer/Footer'
+import Trusted from './Trusted/Trusted'
 import './home.css'
 
 
@@ -33,6 +34,7 @@ export class Home extends Component {
                 <CTA />
                 <About />
                 <Benefits />
+                <Trusted />
                 <Contact />
                 <Footer />
             </div>
