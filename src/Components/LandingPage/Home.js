@@ -33,9 +33,9 @@ export class Home extends Component {
                 <Testimonials />
                 <CTA />
                 <About />
-                <Benefits />
                 <Trusted />
-                <Contact />
+                <Benefits />
+                {/* <Contact /> */}
                 <Footer />
             </div>
         )
