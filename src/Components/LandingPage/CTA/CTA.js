@@ -5,8 +5,7 @@ const CTA = () => {
     return (
         <div className='cta'>
             <div className='cta-words'>
-                <h1>Need New Paint?</h1>
-                <h1>Let Us Help.</h1>
+                <h1>Schedule your free estimate today!</h1>
             </div>
             <div className='cta-button'>
                 <button>Get Quote</button>

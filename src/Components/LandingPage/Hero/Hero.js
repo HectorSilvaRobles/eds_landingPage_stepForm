@@ -26,7 +26,8 @@ const Hero = () => {
             <div className='hero-info'>
                 <div className='hero-info-words'>
                     <h1>Arizona Paint & Coating Solutions</h1>
-                    <h2>We offer quality services for both home owners and businesses.</h2>
+                    {/* <h2>We offer quality services for both home owners and businesses.</h2> */}
+                    <h2>Schedule your free estimate with trusted professionals!</h2>
                 </div>
                 <div className='hero-info-buttons'>
                         <button 
