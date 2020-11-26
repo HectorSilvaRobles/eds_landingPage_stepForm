@@ -1,0 +1,164 @@
+.smallbusiness {
+    height: 800px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.smallbusiness-image {
+    width: 40%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+}
+
+.smallbusiness-image > img {
+    height: 100%;
+}
+
+.smallbusiness-title {
+    width:  45%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.smallbusiness-title > h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: calc(70px + (75 - 70) * ((100vw - 1450px) / (1800 - 1450)));
+    font-weight: bold;
+    cursor: default;
+    color: #192D5A;
+    line-height: 1;
+    margin: 5px 0;
+    width: 90%;
+}
+
+.smallbusiness-title > h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: calc(38px + (45 - 38) * ((100vw - 1450px) / (1800 - 1450)));
+    line-height: 1.1;
+    text-align: start;
+    cursor: default;
+    color: #707070;
+    width: 90%;
+}
+
+@media screen and (max-width : 900px) {
+    .smallbusiness {
+        flex-direction: column-reverse;
+    }
+    .smallbusiness-image, .smallbusiness-title {
+        width: 95%;
+    }
+
+    .smallbusiness-image {
+        justify-content: center;
+        height: 40%;
+    }
+    .smallbusiness-title {
+        height: 30%;
+        align-items: center;
+    }
+    .smallbusiness-title > h1 {
+        font-size: calc(35px + (45 - 35) * ((100vw - 300px) / (600 - 300)));
+        text-align: center;
+        width: 100%;
+    }
+    .smallbusiness-title > h2 {
+        font-size: calc(20px + (28 - 20) * ((100vw - 300px) / (600 - 300)));
+        text-align: center;
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 700px) and (min-width: 501px) {
+    .smallbusiness-title {
+        height: 35%;
+    }
+}
+
+@media screen and (max-width: 900px) and (min-width: 701px) {
+    .smallbusiness {
+        height: 900px;
+    }
+    .smallbusiness-title {
+        width: 70%;
+    }
+    .smallbusiness-title > h1 {
+        font-size: calc(45px + (50 - 45) * ((100vw - 700px) / (900 - 700)));
+    }
+
+    .smallbusiness-title > h2 {
+        font-size: calc(24px + (30 - 24) * ((100vw - 700px) / (900 - 700)));
+    }
+}
+
+@media screen and (max-width: 1100px) and (min-width: 901px) {
+    .smallbusiness {
+        height: 700px;
+    }
+    .smallbusiness-title {
+        width: 47.5%;
+    }
+    .smallbusiness-image {
+        height: 50%;
+        width: 42.5%;
+    }
+    .smallbusiness-title > h1 {
+        font-size: calc(45px + (50 - 45) * ((100vw - 900px) / (1100 - 901)));
+    }
+    .smallbusiness-title > h2 {
+        font-size: calc(24px + (30 - 24) * ((100vw - 900px) / (1100 - 901)));
+    }
+}
+
+
+@media screen and (max-width: 1450px) and (min-width: 1101px) {
+    .smallbusiness {
+        height: 750px;
+    }
+    .smallbusiness-title {
+        width: 50%;
+    }
+    .smallbusiness-title > h1 {
+        font-size: calc(55px + (60 - 55) * ((100vw - 1100px) / (1450 - 1101)));
+    }
+    .smallbusiness-title > h2 {
+        font-size: calc(30px + (35 - 30) * ((100vw - 1100px) / (1450 - 1101)));
+    }
+    .smallbusiness-image {
+        width: 40%;
+        height: 60%;
+    }
+}
+
+@media screen and (min-width: 1700px) {
+    .smallbusiness {
+        height: 950px;
+    }
+    .smallbusiness-image {
+        height: 70%;
+    }
+    .smallbusiness-title{
+        align-items: center;
+    }
+    .smallbusiness-title > h1, .smallbusiness-title > h2 {
+        width: 85%;
+    }
+}
+
+@media screen and (min-width: 2100px) {
+    .smallbusiness{
+        height: 1100px;
+    }
+}
+
+@media screen and (min-width: 2400px) {
+    .smallbusiness {
+        height: 1200px;
+    }
+}
