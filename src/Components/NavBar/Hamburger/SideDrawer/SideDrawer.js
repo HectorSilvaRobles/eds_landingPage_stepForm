@@ -11,7 +11,7 @@ export default function SideDrawer(props){
 
     return (
         <div className={drawerClasses}>
-            <Link
+            {/* <Link
                         activeClass='active-menu'
                         to='hero'
                         spy={true}
@@ -20,7 +20,7 @@ export default function SideDrawer(props){
                         offset={-70}
                         onClick={props.close}
 
-                    >Home</Link>
+                    >Home</Link> */}
                     <Link
                         activeClass='active-menu'
                         to='services'
@@ -61,7 +61,7 @@ export default function SideDrawer(props){
                         onClick={props.close}
 
                     >About</Link>
-                    <Link
+                    {/* <Link
                         activeClass='active-menu'
                         to='contact'
                         spy={true}
@@ -70,7 +70,7 @@ export default function SideDrawer(props){
                         offset={0}
                         onClick={props.close}
 
-                    >Contact</Link>
+                    >Contact</Link> */}
         </div>
     )
 }

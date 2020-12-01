@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from '../../../Assets/intro.png'
+import Image from '../../../Assets/logo.png'
 import './intro.css'
 
 const Intro = (props) => {
