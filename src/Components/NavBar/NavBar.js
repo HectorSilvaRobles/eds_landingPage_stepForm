@@ -22,14 +22,14 @@ const NavBar = () => {
             <div className='nav'>
                 <div className='navbar-logo'><img src={Logo} /></div>
                 <div className='navbar-menu'>
-                    <Link
+                    {/* <Link
                         activeClass='active-menu'
                         to='hero'
                         spy={true}
                         smooth={true}
                         duration={500}
                         offset={-70}
-                    >Home</Link>
+                    >Home</Link> */}
                     <Link
                         activeClass='active-menu'
                         to='services'
@@ -62,14 +62,14 @@ const NavBar = () => {
                         duration={500}
                         offset={0}
                     >About</Link>
-                    <Link
+                    {/* <Link
                         activeClass='active-menu'
                         to='contact'
                         spy={true}
                         smooth={true}
                         duration={500}
                         offset={0}
-                    >Contact</Link>
+                    >Contact</Link> */}
                 </div>
                 <div className='togglebutton'>
                     <ToggleButton click={drawerToggleClick} />
