@@ -2,31 +2,44 @@ import React, {useState} from 'react'
 import drywall from '../../../Assets/drywall.jpg'
 import painter from '../../../Assets/painter.jpg'
 import interior from '../../../Assets/interior.png'
+import Modal from '@material-ui/core/Modal'
+import ModalForm from '../Modal/Modal';
+import Backdrop from '@material-ui/core/Backdrop'
+import Fade from '@material-ui/core/Fade'
 import './services.css'
 
 const Services = () => {
     const interiorType = {
         "type" : "interior",
         "name" : "Interior Paint",
-        "description" : "Include a short description of service. It should be around 3-4 sentences. Keep it simple and to the point.",
+        "description" : "Being that the average interior of a home is repainted every three to four years, your investment will eventually need a fresh coat.",
         "image" : interior
     }
 
     const exteriorType = {
         "type" : "exterior",
         "name" : "Exterior Paint",
-        "description" : "Include a short description of service. It should be around 3-4 sentences. Keep it simple and to the point.",
+        "description" : "Exterior painting is often times affiliated with a drastic change of appeal. Our services are made to help maintain, protect, and enhance your home's look.",
         "image" : painter
     }
 
     const drywallType = {
         "type" : "drywall",
         "name" : "Drywall",
-        "description" : "Include a short description of service. It should be around 3-4 sentences. Keep it simple and to the point.",
+        "description" : "Create many features such as eaves, arches and other architectural designs. Fully licensed to offer our Drywall services for both residential and commercial properties.",
         "image" : drywall
     }
 
     const [type, setType] = useState(interiorType)
+
+    // open modal
+    const [open, setOpen] = useState(false)
+    const handleOpen = () =>{
+        setOpen(true)
+    }
+    const handleClose = () =>{
+        setOpen(false)
+    }
 
     return (
         <div className='services' id='services'>
@@ -49,7 +62,21 @@ const Services = () => {
                     <div className='service-card-info'>
                         <h1>{type.name}</h1>
                         <p>{type.description}</p>
-                        <button>Get Quote</button>
+                        <button onClick={handleOpen}>Get Quote</button>
+                        <Modal
+                            open={open}
+                            onClose={handleClose}
+                            closeAfterTransition
+                            className={'modal-backdrop'}
+                            BackdropComponent={Backdrop}
+                            BackdropProps={{
+                                timeout: 500,
+                            }}
+                        >   
+                            <Fade in={open}>
+                                <ModalForm onClose={handleClose} />
+                            </Fade>
+                        </Modal>
                     </div>
                 </div>
             </div>

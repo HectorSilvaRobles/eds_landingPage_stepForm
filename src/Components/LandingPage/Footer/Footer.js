@@ -10,14 +10,14 @@ const Footer = () => {
             <div>
                 <div className='footer-logo'><img src={logo} /></div>
                 <div className='footer-menu'>
-                <Link
+                {/* <Link
                         activeClass='active-menu'
                         to='hero'
                         spy={true}
                         smooth={true}
                         duration={500}
                         offset={-70}
-                    >Home</Link>
+                    >Home</Link> */}
                     <Link
                         activeClass='active-menu'
                         to='services'
@@ -50,14 +50,7 @@ const Footer = () => {
                         duration={500}
                         offset={0}
                     >About</Link>
-                    <Link
-                        activeClass='active-menu'
-                        to='contact'
-                        spy={true}
-                        smooth={true}
-                        duration={500}
-                        offset={0}
-                    >Contact</Link>
+                    
                 </div>
             </div>
         </div>

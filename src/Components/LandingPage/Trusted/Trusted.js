@@ -11,11 +11,11 @@ const Trusted = (props) => {
             </div>
             <div className='trusted-content'>
                 <div className='trusted-content-nums'>
-                    <h1>Paint Contract Number</h1>
+                    <h1>Paint ROC Number</h1>
                     <h2>#328758</h2>
                 </div>
                 <div className='trusted-content-nums'>
-                    <h1>Drywall Contract Number</h1>
+                    <h1>Drywall ROC Number</h1>
                     <h2>#330755</h2>
                 </div>
                 <div className='trusted-content-bbb'>
